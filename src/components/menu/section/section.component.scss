@@ -1,0 +1,113 @@
+:host {
+  background-color: rgba(132, 108, 48, 0.05);
+  color: #4a3a25;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 24px 28px;
+}
+
+.menu-section {
+  &__heading {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    font-family: 'Noto Serif', serif;
+
+    &-name {
+      font-weight: 500;
+    }
+
+    &-description {
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    &-price {
+      font-weight: bold;
+      margin-left: auto;
+    }
+
+    &-spicyness {
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+
+  &__variants-container {
+    padding-left: 8px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+  }
+
+  &__variant {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'bullet content price';
+    column-gap: 8px;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 15px;
+
+    &-bullet {
+      grid-area: bullet;
+      align-self: baseline;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    &-content {
+      grid-area: content;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    &-name {
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    &-description {
+      font-size: 13px;
+      margin-left: 8px;
+    }
+
+    &-price {
+      grid-area: price;
+      font-weight: bold;
+      text-align: right;
+      white-space: nowrap;
+      justify-self: end;
+      align-self: baseline;
+    }
+
+    &-spicyness {
+      font-size: 12px;
+      margin-left: 4px;
+    }
+
+    &--vegetarian {
+      .menu-section__variant-description {
+        &::after {
+          content: '🌱';
+          margin-left: 6px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

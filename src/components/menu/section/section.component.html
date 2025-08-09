@@ -1,0 +1,47 @@
+<h3 class="menu-section__heading">{{ section().name }}</h3>
+@for (item of section().items; track item) {
+  <div class="menu-section__item">
+    <span class="menu-section__item-name">{{ item.name }}</span>
+    @if (item.description) {
+      <span class="menu-section__item-description">{{ item.description }}</span>
+    }
+    @if (item.spicyness) {
+      <span class="menu-section__item-spicyness">
+        @for (i of [1, 2, 3]; track i) {
+          {{ i <= item.spicyness ? '🌶️' : '' }}
+        }
+      </span>
+    }
+    @if (item.price) {
+      <span class="menu-section__item-price">{{ item.price }}</span>
+    }
+  </div>
+
+  @if (item.variants) {
+    <div class="menu-section__variants-container">
+      @for (variant of item.variants; track variant) {
+        <div
+          class="menu-section__variant {{
+            variant.vegetarian ? 'menu-section__variant--vegetarian' : ''
+          }}"
+        >
+          <div class="menu-section__variant-bullet">•</div>
+          <div class="menu-section__variant-content">
+            <span class="menu-section__variant-name">{{ variant.name }}</span>
+            @if (variant.description) {
+              <span class="menu-section__variant-description">{{ variant.description }}</span>
+            }
+            @if (variant.spicyness) {
+              <span class="menu-section__variant-spicyness">
+                @for (i of [1, 2, 3]; track i) {
+                  {{ i <= variant.spicyness ? '🌶️' : '' }}
+                }
+              </span>
+            }
+          </div>
+          <span class="menu-section__variant-price">{{ variant.price }}</span>
+        </div>
+      }
+    </div>
+  }
+}

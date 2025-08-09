@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { MenuSectionComponent } from '../components/menu/section/section.component';
+import { MenuService } from '../services/menu.service';
+import { AsyncPipe } from '@angular/common';
+import { MenuSection } from '../components/menu/section/section.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [MenuSectionComponent, AsyncPipe],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('a-chau');
+  private menuService: MenuService = inject(MenuService);
+  public menu$: Observable<{ sections: MenuSection[] }> = this.menuService.getMenu();
 }
