@@ -1,0 +1,5 @@
+@if (menu$ | async; as menu) {
+  @for (section of menu.sections; track section.id) {
+    <app-menu-section [section]="section"></app-menu-section>
+  }
+}

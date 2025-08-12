@@ -1,0 +1,984 @@
+{
+  "annotation": "Wszystkie dania są podawane z ryżem i surówką",
+  "sections": [
+    {
+      "id": "przystawki",
+      "name": "PRZYSTAWKI",
+      "subsections": [
+        {
+          "id": "przystawki-main",
+          "items": [
+            {
+              "id": "chipsy-krewetkowe",
+              "name": "Chipsy krewetkowe",
+              "description": "(12 szt.)",
+              "price": 8
+            },
+            {
+              "id": "nem-saigon",
+              "name": "Nem Saigon",
+              "variants": [
+                {
+                  "id": "wegetarianskie",
+                  "name": "wegetariańskie",
+                  "description": "(5szt.)",
+                  "price": 12,
+                  "vegetarian": true
+                },
+                {
+                  "id": "wieprzowe",
+                  "name": "wieprzowe",
+                  "description": "(2szt.)",
+                  "price": 13
+                },
+                {
+                  "id": "krewetkowo-krabowe",
+                  "name": "krewetkowo-krabowe",
+                  "description": "(4szt.)",
+                  "price": 15
+                }
+              ]
+            },
+            {
+              "id": "tofu-chrupiace",
+              "name": "Tofu chrupiące",
+              "price": 30,
+              "vegetarian": true
+            },
+            {
+              "id": "kalmary-chrupiace",
+              "name": "Kalmary chrupiące",
+              "price": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dania-wegetarianskie",
+      "name": "DANIA WEGETARIAŃSKIE",
+      "subsections": [
+        {
+          "id": "dania-wegetarianskie-main",
+          "items": [
+            {
+              "id": "ryz-z-jarzynami",
+              "name": "Ryż z jarzynami",
+              "price": 23,
+              "vegetarian": true
+            },
+            {
+              "id": "tofu-z-jarzynami",
+              "name": "Tofu z jarzynami",
+              "price": 29,
+              "vegetarian": true
+            },
+            {
+              "id": "tofu-w-sosie-pomidorowym",
+              "name": "Tofu w sosie pomidorowym",
+              "price": 29,
+              "vegetarian": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zupy",
+      "name": "ZUPY",
+      "subsections": [
+        {
+          "id": "zupy-main",
+          "items": [
+            {
+              "id": "zageszczana",
+              "name": "Zagęszczana",
+              "price": 17,
+              "variants": [
+                {
+                  "id": "z-kurczakiem-zageszczana",
+                  "name": "z kurczakiem"
+                },
+                {
+                  "id": "z-bambusem-zageszczana",
+                  "name": "z bambusem"
+                }
+              ]
+            },
+            {
+              "id": "pho",
+              "name": "PHỞ",
+              "price": 17,
+              "variants": [
+                {
+                  "id": "z-kurczakiem-pho",
+                  "name": "z kurczakiem"
+                },
+                {
+                  "id": "z-wolowina-pho",
+                  "name": "z wołowiną"
+                }
+              ]
+            },
+            {
+              "id": "z-makaronem-sojowym",
+              "name": "Z makaronem sojowym",
+              "price": 17,
+              "variants": [
+                {
+                  "id": "z-kurczakiem-makaron",
+                  "name": "z kurczakiem"
+                },
+                {
+                  "id": "z-wolowina-makaron",
+                  "name": "z wołowiną"
+                }
+              ]
+            },
+            {
+              "id": "warzywna",
+              "name": "Warzywna",
+              "price": 17,
+              "vegetarian": true
+            },
+            {
+              "id": "zupa-inne",
+              "name": "Zupa:",
+              "price": 20,
+              "variants": [
+                {
+                  "id": "rybna",
+                  "name": "rybna"
+                },
+                {
+                  "id": "z-krabem",
+                  "name": "z krabem"
+                },
+                {
+                  "id": "z-owocami-morza",
+                  "name": "z owocami morza"
+                }
+              ]
+            },
+            {
+              "id": "zupa-pikantna",
+              "name": "Zupa pikantna",
+              "variants": [
+                {
+                  "id": "tom-kha",
+                  "name": "Tom Kha (kurczak)",
+                  "price": 18,
+                  "spicyness": 2
+                },
+                {
+                  "id": "tom-yum",
+                  "name": "Tom Yum (krewetki)",
+                  "price": 25,
+                  "spicyness": 2
+                }
+              ]
+            },
+            {
+              "id": "wonton",
+              "name": "Wonton",
+              "price": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inne",
+      "name": "INNE",
+      "subsections": [
+        {
+          "id": "inne-main",
+          "items": [
+            {
+              "id": "ryz-z-rozmaistosciami",
+              "name": "Ryż z rozmaitościami",
+              "price": 33
+            },
+            {
+              "id": "ryz-smazony",
+              "name": "Ryż smażony",
+              "variants": [
+                {
+                  "id": "z-kurczakiem-ryz",
+                  "name": "z kurczakiem",
+                  "price": 31
+                },
+                {
+                  "id": "z-wieprzowina-ryz",
+                  "name": "z wieprzowiną",
+                  "price": 31
+                },
+                {
+                  "id": "z-krewetkami-i-krabem",
+                  "name": "z krewetkami i krabem",
+                  "price": 35
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drob",
+      "name": "DRÓB",
+      "subsections": [
+        {
+          "id": "kurczak",
+          "name": "KURCZAK",
+          "description": "250g",
+          "items": [
+            {
+              "id": "kurczak-w-ciescie",
+              "name": "Kurczak w cieście",
+              "price": 31
+            },
+            {
+              "id": "w-sosie-kurczak",
+              "name": "W sosie",
+              "price": 31,
+              "variants": [
+                {
+                  "id": "5-smakow",
+                  "name": "5 smaków"
+                },
+                {
+                  "id": "slodko-kwasnym-kurczak",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "ostrygowym-kurczak",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "curry-kurczak",
+                  "name": "curry"
+                },
+                {
+                  "id": "ciemnym-kurczak",
+                  "name": "ciemnym"
+                }
+              ]
+            },
+            {
+              "id": "z-dodatkami-kurczak",
+              "name": "Z dodatkami",
+              "price": 31,
+              "variants": [
+                {
+                  "id": "z-grzybami-mun-kurczak",
+                  "name": "z grzybami MUN"
+                },
+                {
+                  "id": "z-jarzynami-kurczak",
+                  "name": "z jarzynami"
+                },
+                {
+                  "id": "z-orzechami-kurczak",
+                  "name": "z orzechami"
+                }
+              ]
+            },
+            {
+              "id": "na-goracy-talerz-kurczak",
+              "name": "Na gorący talerz",
+              "price": 32
+            },
+            {
+              "id": "mistrza-chilli",
+              "name": "Mistrza / Chilli",
+              "price": 32
+            },
+            {
+              "id": "kotlet-mistrza",
+              "name": "Kotlet mistrza",
+              "price": 33
+            }
+          ]
+        },
+        {
+          "id": "indyk",
+          "name": "INDYK",
+          "items": [
+            {
+              "id": "w-sosie-indyk",
+              "name": "W sosie",
+              "price": 31,
+              "variants": [
+                {
+                  "id": "slodko-kwasnym-indyk",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "curry-indyk",
+                  "name": "curry"
+                },
+                {
+                  "id": "ostrygowym-indyk",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "ciemnym-indyk",
+                  "name": "ciemnym"
+                }
+              ]
+            },
+            {
+              "id": "z-dodatkami-indyk",
+              "name": "Z dodatkami",
+              "price": 31,
+              "variants": [
+                {
+                  "id": "z-grzybami-mun-indyk",
+                  "name": "z grzybami MUN"
+                },
+                {
+                  "id": "z-jarzynami-indyk",
+                  "name": "z jarzynami"
+                },
+                {
+                  "id": "w-sezamie-indyk",
+                  "name": "w sezamie"
+                }
+              ]
+            },
+            {
+              "id": "na-goracy-talerz-indyk",
+              "name": "Na gorący talerz",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "id": "kaczka",
+          "name": "KACZKA",
+          "items": [
+            {
+              "id": "w-sosie-kaczka",
+              "name": "W sosie",
+              "price": 43,
+              "variants": [
+                {
+                  "id": "slodko-kwasnym-kaczka",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "curry-kaczka",
+                  "name": "curry"
+                },
+                {
+                  "id": "ostrygowym-kaczka",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "hoisin-kaczka",
+                  "name": "hoisin"
+                },
+                {
+                  "id": "ciemnym-kaczka",
+                  "name": "ciemnym"
+                }
+              ]
+            },
+            {
+              "id": "z-grzybami-i-bambusem",
+              "name": "Z grzybami i bambusem",
+              "price": 43
+            },
+            {
+              "id": "na-goracy-talerz-kaczka",
+              "name": "Na gorący talerz",
+              "price": 47
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makarony",
+      "name": "MAKARONY",
+      "subsections": [
+        {
+          "id": "standard",
+          "name": "sojowy / ryżowy / pszenny",
+          "description": "300-350g",
+          "items": [
+            {
+              "id": "z-jarzynami-makaron",
+              "name": "z jarzynami",
+              "price": 23,
+              "vegetarian": true
+            },
+            {
+              "id": "z-tofu-makaron",
+              "name": "z tofu",
+              "price": 30,
+              "vegetarian": true
+            },
+            {
+              "id": "z-wieprzowina-makaron",
+              "name": "z wieprzowiną",
+              "price": 30
+            },
+            {
+              "id": "z-kurczakiem-makaron",
+              "name": "z kurczakiem",
+              "price": 31
+            },
+            {
+              "id": "z-indykiem-makaron",
+              "name": "z indykiem",
+              "price": 31
+            },
+            {
+              "id": "z-golonka-makaron",
+              "name": "z golonką",
+              "price": 34
+            },
+            {
+              "id": "z-wolowina-makaron",
+              "name": "z wołowiną",
+              "price": 37
+            },
+            {
+              "id": "z-kaczka-makaron",
+              "name": "z kaczką",
+              "price": 42
+            },
+            {
+              "id": "z-cielecina-makaron",
+              "name": "z cielęciną",
+              "price": 46
+            },
+            {
+              "id": "z-krewetkami-makaron",
+              "name": "z krewetkami",
+              "price": 48
+            }
+          ]
+        },
+        {
+          "id": "pad-thai-udon",
+          "name": "pad thai / udon",
+          "description": "300-350g",
+          "items": [
+            {
+              "id": "z-kurczakiem-pad-thai",
+              "name": "z kurczakiem",
+              "price": 31
+            },
+            {
+              "id": "z-wolowina-pad-thai",
+              "name": "z wołowiną",
+              "price": 37
+            },
+            {
+              "id": "z-krewetkami-pad-thai",
+              "name": "z krewetkami",
+              "price": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wieprzowina",
+      "name": "WIEPRZOWINA",
+      "description": "250-300g",
+      "subsections": [
+        {
+          "id": "wieprzowina-main",
+          "items": [
+            {
+              "id": "w-sosie-wieprzowina",
+              "name": "W sosie",
+              "price": 30,
+              "variants": [
+                {
+                  "id": "ciemnym-wieprzowina",
+                  "name": "ciemnym"
+                },
+                {
+                  "id": "curry-wieprzowina",
+                  "name": "curry"
+                },
+                {
+                  "id": "kwasno-pikantnym-wieprzowina",
+                  "name": "kwaśno-pikantnym"
+                }
+              ]
+            },
+            {
+              "id": "z-dodatkami-wieprzowina",
+              "name": "Z dodatkami",
+              "price": 30,
+              "variants": [
+                {
+                  "id": "z-grzybami-mun-wieprzowina",
+                  "name": "z grzybami MUN"
+                },
+                {
+                  "id": "z-jarzynami-wieprzowina",
+                  "name": "z jarzynami"
+                },
+                {
+                  "id": "z-orzechami-wieprzowina",
+                  "name": "z orzechami"
+                },
+                {
+                  "id": "z-bambusem-wieprzowina",
+                  "name": "z bambusem"
+                }
+              ]
+            },
+            {
+              "id": "boczek-smakosza",
+              "name": "Boczek smakosza",
+              "price": 33
+            },
+            {
+              "id": "boczek-a-chau",
+              "name": "Boczek Á Châu",
+              "price": 33
+            },
+            {
+              "id": "karkowka-w-karmelu",
+              "name": "Karkówka w karmelu",
+              "price": 33
+            },
+            {
+              "id": "golonka-z-grzybami-mun",
+              "name": "Golonka z grzybami MUN",
+              "price": 34
+            },
+            {
+              "id": "golonka-a-chau-w-sosie",
+              "name": "Golonka Á Châu w sosie",
+              "price": 39,
+              "variants": [
+                {
+                  "id": "kwasno-pikantnym-golonka",
+                  "name": "kwaśno-pikantnym"
+                },
+                {
+                  "id": "ciemnym-golonka",
+                  "name": "ciemnym"
+                },
+                {
+                  "id": "karmelowym",
+                  "name": "karmelowym"
+                },
+                {
+                  "id": "ostrygowym-golonka",
+                  "name": "ostrygowym"
+                }
+              ]
+            },
+            {
+              "id": "zeberka-w-sosie",
+              "name": "Żeberka w sosie",
+              "price": 40,
+              "variants": [
+                {
+                  "id": "slodko-kwasnym-zeberka",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "ostrygowym-zeberka",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "kwasno-pikantnym-zeberka",
+                  "name": "kwaśno-pikantnym"
+                }
+              ]
+            },
+            {
+              "id": "golonka-na-goracy-talerz",
+              "name": "Golonka na gorący talerz",
+              "price": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wolowina",
+      "name": "WOŁOWINA",
+      "description": "250g",
+      "subsections": [
+        {
+          "id": "wolowina-main",
+          "items": [
+            {
+              "id": "w-sosie-wolowina",
+              "name": "W sosie",
+              "price": 37,
+              "variants": [
+                {
+                  "id": "ciemnym-wolowina",
+                  "name": "ciemnym"
+                },
+                {
+                  "id": "curry-wolowina",
+                  "name": "curry"
+                },
+                {
+                  "id": "hoisin-wolowina",
+                  "name": "hoisin"
+                },
+                {
+                  "id": "ostrygowym-wolowina",
+                  "name": "ostrygowym"
+                }
+              ]
+            },
+            {
+              "id": "z-dodatkami-wolowina",
+              "name": "Z dodatkami",
+              "price": 37,
+              "variants": [
+                {
+                  "id": "z-grzybami-mun-wolowina",
+                  "name": "z grzybami MUN"
+                },
+                {
+                  "id": "z-jarzynami-wolowina",
+                  "name": "z jarzynami"
+                },
+                {
+                  "id": "z-orzechami-wolowina",
+                  "name": "z orzechami"
+                },
+                {
+                  "id": "z-bambusem-wolowina",
+                  "name": "z bambusem"
+                }
+              ]
+            },
+            {
+              "id": "antrykot",
+              "name": "Antrykot",
+              "price": 45
+            },
+            {
+              "id": "poledwica-na-goracy-talerz",
+              "name": "Polędwica na gorący talerz",
+              "price": 63
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cielecina",
+      "name": "CIELĘCINA",
+      "description": "250g",
+      "subsections": [
+        {
+          "id": "cielecina-main",
+          "items": [
+            {
+              "id": "w-sosie-cielecina",
+              "name": "W sosie",
+              "price": 46,
+              "variants": [
+                {
+                  "id": "ciemnym-cielecina",
+                  "name": "ciemnym"
+                },
+                {
+                  "id": "curry-cielecina",
+                  "name": "curry"
+                },
+                {
+                  "id": "slodko-kwasnym-cielecina",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "hoisin-cielecina",
+                  "name": "hoisin"
+                },
+                {
+                  "id": "ostrygowym-cielecina",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "5-smakow-cielecina",
+                  "name": "5 smaków"
+                }
+              ]
+            },
+            {
+              "id": "z-dodatkami-cielecina",
+              "name": "Z dodatkami",
+              "price": 46,
+              "variants": [
+                {
+                  "id": "w-sezamie-cielecina",
+                  "name": "w sezamie"
+                },
+                {
+                  "id": "z-jarzynami-cielecina",
+                  "name": "z jarzynami"
+                },
+                {
+                  "id": "z-orzechami-cielecina",
+                  "name": "z orzechami"
+                }
+              ]
+            },
+            {
+              "id": "befsztyk-na-goracy-talerz",
+              "name": "Befsztyk na gorący talerz",
+              "price": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ryby",
+      "name": "RYBY",
+      "description": "250-300g",
+      "subsections": [
+        {
+          "id": "dorsz",
+          "name": "DORSZ",
+          "items": [
+            {
+              "id": "w-sosie-dorsz",
+              "name": "W sosie",
+              "price": 42,
+              "variants": [
+                {
+                  "id": "slodko-kwasnym-dorsz",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "ostrygowym-dorsz",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "pomidorowym-dorsz",
+                  "name": "pomidorowym"
+                }
+              ]
+            },
+            {
+              "id": "z-jarzynami-dorsz",
+              "name": "Z jarzynami",
+              "price": 42
+            },
+            {
+              "id": "w-ciescie-dorsz",
+              "name": "W cieście",
+              "price": 42
+            }
+          ]
+        },
+        {
+          "id": "sandacz",
+          "name": "SANDACZ",
+          "items": [
+            {
+              "id": "w-sosie-sandacz",
+              "name": "W sosie",
+              "price": 44,
+              "variants": [
+                {
+                  "id": "slodko-kwasnym-sandacz",
+                  "name": "słodko-kwaśnym"
+                },
+                {
+                  "id": "ostrygowym-sandacz",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "pomidorowym-sandacz",
+                  "name": "pomidorowym"
+                }
+              ]
+            },
+            {
+              "id": "z-jarzynami-sandacz",
+              "name": "Z jarzynami",
+              "price": 44
+            },
+            {
+              "id": "w-ciescie-sandacz",
+              "name": "W cieście",
+              "price": 44
+            }
+          ]
+        },
+        {
+          "id": "losos",
+          "name": "ŁOSOŚ",
+          "items": [
+            {
+              "id": "w-sosie-losos",
+              "name": "W sosie",
+              "price": 47,
+              "variants": [
+                {
+                  "id": "ostrygowym-losos",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "pomidorowym-losos",
+                  "name": "pomidorowym"
+                }
+              ]
+            },
+            {
+              "id": "w-ciescie-losos",
+              "name": "W cieście",
+              "price": 47
+            }
+          ]
+        },
+        {
+          "id": "halibut",
+          "name": "HALIBUT",
+          "items": [
+            {
+              "id": "chrupiacy",
+              "name": "Chrupiący",
+              "price": 54
+            },
+            {
+              "id": "na-parze",
+              "name": "Na parze",
+              "price": 54
+            },
+            {
+              "id": "z-jarzynami-halibut",
+              "name": "Z jarzynami",
+              "price": 54
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "owoce-morza",
+      "name": "OWOCE MORZA",
+      "description": "250-350g",
+      "subsections": [
+        {
+          "id": "owoce-morza-main",
+          "items": [
+            {
+              "id": "owoce-morza-z-jarzynami",
+              "name": "Owoce morza z jarzynami",
+              "price": 38
+            }
+          ]
+        },
+        {
+          "id": "kalmary",
+          "name": "KALMARY",
+          "items": [
+            {
+              "id": "z-jarzynami-kalmary",
+              "name": "Z jarzynami",
+              "price": 40
+            },
+            {
+              "id": "w-sosie-slodko-kwasnym",
+              "name": "W sosie słodko-kwaśnym",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "id": "krewetki",
+          "name": "KREWETKI",
+          "items": [
+            {
+              "id": "z-rozmaistosciami",
+              "name": "Z rozmaitościami",
+              "price": 48
+            },
+            {
+              "id": "w-sosie-krewetki",
+              "name": "W sosie",
+              "price": 53,
+              "variants": [
+                {
+                  "id": "ostrygowym-krewetki",
+                  "name": "ostrygowym"
+                },
+                {
+                  "id": "kwasno-pikantnym-krewetki",
+                  "name": "kwaśno-pikantnym"
+                }
+              ]
+            },
+            {
+              "id": "w-sezamie-krewetki",
+              "name": "W sezamie",
+              "description": "(8 szt.)",
+              "price": 53
+            },
+            {
+              "id": "krolewskie-na-masle",
+              "name": "Królewskie na maśle",
+              "description": "(7 szt.)",
+              "price": 58
+            }
+          ]
+        },
+        {
+          "id": "zabie-udka",
+          "name": "ŻABIE UDKA",
+          "items": [
+            {
+              "id": "w-ciescie-zabie",
+              "name": "W cieście",
+              "price": 42
+            },
+            {
+              "id": "z-bambusem-zabie",
+              "name": "Z bambusem",
+              "price": 42
+            },
+            {
+              "id": "w-sosie-curry-zabie",
+              "name": "W sosie curry",
+              "price": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dodatki",
+      "name": "DODATKI",
+      "subsections": [
+        {
+          "id": "dodatki-main",
+          "items": [
+            {
+              "id": "ryz-makaron-smazony",
+              "name": "Ryż / makaron smażony",
+              "price": 10
+            },
+            {
+              "id": "opakowanie-na-wynos",
+              "name": "Opakowanie na wynos",
+              "price": 0.5,
+              "description": "/ szt."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

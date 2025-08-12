@@ -20,34 +20,76 @@
     text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
   }
 
+  &__subheading {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+    font-style: italic;
+
+    &--item {
+      text-align: left;
+      margin-left: 8px;
+      margin-bottom: 0;
+    }
+
+    &--variant {
+      text-align: left;
+      font-size: 13px;
+      margin-left: 8px;
+      margin-bottom: 0;
+    }
+  }
+
   &__item {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 6px;
     font-family: 'Noto Serif', serif;
+  }
 
-    &-name {
-      font-weight: 500;
-    }
+  &__name {
+    font-weight: 500;
 
-    &-description {
-      font-size: 14px;
-      margin-left: 8px;
-    }
-
-    &-price {
-      font-weight: bold;
-      margin-left: auto;
-    }
-
-    &-spicyness {
-      font-size: 12px;
-      margin-left: 4px;
+    &--variant {
+      font-weight: 400;
+      margin-bottom: 6px;
     }
   }
 
-  &__variants-container {
+  &__price {
+    font-weight: bold;
+    margin-left: auto;
+
+    &--variant {
+      text-align: right;
+      white-space: nowrap;
+      justify-self: end;
+      align-self: baseline;
+    }
+  }
+
+  &__spicyness {
+    font-size: 12px;
+    margin-left: 4px;
+
+    &--variant {
+      font-size: 12px;
+    }
+  }
+
+  &__vegetarian {
+    margin-left: 4px;
+  }
+
+  &__variants {
     padding-left: 8px;
     margin-top: 2px;
     margin-bottom: 12px;
@@ -61,53 +103,19 @@
     align-items: baseline;
     margin-bottom: 8px;
     font-size: 15px;
+  }
 
-    &-bullet {
-      grid-area: bullet;
-      align-self: baseline;
-      font-size: 18px;
-      line-height: 1.2;
-    }
+  &__bullet {
+    grid-area: bullet;
+    align-self: baseline;
+    font-size: 18px;
+    line-height: 1.2;
+  }
 
-    &-content {
-      grid-area: content;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-    }
-
-    &-name {
-      font-weight: 400;
-      margin-bottom: 6px;
-    }
-
-    &-description {
-      font-size: 13px;
-      margin-left: 8px;
-    }
-
-    &-price {
-      grid-area: price;
-      font-weight: bold;
-      text-align: right;
-      white-space: nowrap;
-      justify-self: end;
-      align-self: baseline;
-    }
-
-    &-spicyness {
-      font-size: 12px;
-      margin-left: 4px;
-    }
-
-    &--vegetarian {
-      .menu-section__variant-description {
-        &::after {
-          content: '🌱';
-          margin-left: 6px;
-          font-size: 12px;
-        }
-      }
-    }
+  &__content {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
   }
 }

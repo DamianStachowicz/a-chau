@@ -5,5 +5,5 @@ export interface Item {
   price?: number;
   variants?: Item[];
   vegetarian?: boolean;
-  spicyness: number; // 1-3
+  spicyness?: number; // 0-3, where 0 means not spicy
 }
