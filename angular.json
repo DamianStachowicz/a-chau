@@ -78,11 +78,18 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
+            "codeCoverage": true,
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": ""
               }
+            ],
+            "reporters": [
+              "progress",
+              "kjhtml",
+              "coverage"
             ],
             "styles": ["src/styles.scss"]
           }

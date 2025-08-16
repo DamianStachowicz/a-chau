@@ -16,6 +16,15 @@
       "options": {
         "parser": "angular"
       }
+    },
+    {
+      "files": ["*.json", "*.jsonc"],
+      "options": {
+        "parser": "json",
+        "tabWidth": 2,
+        "printWidth": 80,
+        "singleQuote": false
+      }
     }
   ]
 }
