@@ -1,5 +1,10 @@
 @if (menu$ | async; as menu) {
-  @for (section of menu.sections; track section.id) {
-    <app-menu-section [section]="section"></app-menu-section>
+  @if (menu.annotation) {
+    <div class="menu__annotation">{{ menu.annotation }}</div>
   }
+  <div class="menu__sections">
+    @for (section of menu.sections; track section.id) {
+      <app-menu-section [section]="section"></app-menu-section>
+    }
+  </div>
 }

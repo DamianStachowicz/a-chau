@@ -10,18 +10,18 @@
 
 .menu-section {
   &__heading {
-    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-family: "Playfair Display", "Times New Roman", serif;
     font-weight: 700;
     font-size: 20px;
     text-align: center;
     margin-bottom: 18px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
   }
 
   &__subheading {
-    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-family: "Playfair Display", "Times New Roman", serif;
     font-weight: 600;
     font-size: 14px;
     text-align: center;
@@ -52,7 +52,7 @@
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 6px;
-    font-family: 'Noto Serif', serif;
+    font-family: "Noto Serif", serif;
   }
 
   &__name {
@@ -98,7 +98,7 @@
   &__variant {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-template-areas: 'bullet content price';
+    grid-template-areas: "bullet content price";
     column-gap: 8px;
     align-items: baseline;
     margin-bottom: 8px;

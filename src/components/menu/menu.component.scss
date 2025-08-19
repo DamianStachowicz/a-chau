@@ -1,19 +1,33 @@
-:host {
-  display: block; /* Ensure the host element is a block container */
-  padding: 24px;
-  column-gap: 16px; /* Add column-gap explicitly */
+.menu {
+  &__sections {
+    display: block;
+    padding: 24px;
+    column-gap: 16px;
+  }
+
+  &__annotation {
+    color: #4a3a25;
+    display: block;
+    font-size: 12px;
+    margin: 0 auto;
+    padding: 6px;
+    text-align: center;
+  }
 }
 
 app-menu-section {
-  break-inside: avoid-column; /* Prevent sections from breaking across columns */
+  /* Prevent sections from breaking across columns */
+  break-inside: avoid-column;
   margin-bottom: 16px;
 }
 
 /* ===== Tablet and up ===== */
 @media (min-width: 768px) {
-  :host {
-    padding: 32px;
-    columns: 2;
+  .menu {
+    &__sections {
+      padding: 16px 32px;
+      columns: 2;
+    }
   }
 
   app-menu-section {
@@ -23,11 +37,13 @@ app-menu-section {
 
 /* ===== Desktop ===== */
 @media (min-width: 1024px) {
-  :host {
-    columns: 3;
-    gap: 24px;
-    padding: 48px;
-    column-gap: 24px;
+  .menu {
+    &__sections {
+      columns: 3;
+      gap: 24px;
+      padding: 24px 48px;
+      column-gap: 24px;
+    }
   }
 
   app-menu-section {
@@ -37,10 +53,12 @@ app-menu-section {
 
 /* ===== Large desktop ===== */
 @media (min-width: 1280px) {
-  :host {
-    columns: 4;
-    column-gap: 32px;
-    gap: 32px;
+  .menu {
+    &__sections {
+      columns: 4;
+      column-gap: 32px;
+      gap: 32px;
+    }
   }
 
   app-menu-section {
