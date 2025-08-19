@@ -25,6 +25,14 @@
         "printWidth": 80,
         "singleQuote": false
       }
+    },
+    {
+      "files": ["*.scss", "*.css"],
+      "options": {
+        "parser": "scss",
+        "singleQuote": false,
+        "printWidth": 100
+      }
     }
   ]
 }
