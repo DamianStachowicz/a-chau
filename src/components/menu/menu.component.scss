@@ -13,6 +13,13 @@
     padding: 6px;
     text-align: center;
   }
+
+  &__logo {
+    display: block;
+    margin: 24px auto 12px auto;
+    width: 40%;
+    height: auto;
+  }
 }
 
 app-menu-section {
@@ -27,6 +34,10 @@ app-menu-section {
     &__sections {
       padding: 16px 32px;
       columns: 2;
+    }
+
+    &__logo {
+      max-width: 128px;
     }
   }
 
