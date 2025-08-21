@@ -1,3 +1,14 @@
+:host {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  background-image: url("/lotos.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 50%;
+  background-attachment: fixed;
+}
+
 .menu {
   &__sections {
     display: block;
@@ -30,6 +41,10 @@ app-menu-section {
 
 /* ===== Tablet and up ===== */
 @media (min-width: 768px) {
+  :host {
+    background-size: 30%;
+  }
+
   .menu {
     &__sections {
       padding: 16px 32px;
@@ -48,6 +63,10 @@ app-menu-section {
 
 /* ===== Desktop ===== */
 @media (min-width: 1024px) {
+  :host {
+    background-size: 25%;
+  }
+
   .menu {
     &__sections {
       columns: 3;
@@ -64,6 +83,10 @@ app-menu-section {
 
 /* ===== Large desktop ===== */
 @media (min-width: 1280px) {
+  :host {
+    background-size: 20%;
+  }
+
   .menu {
     &__sections {
       columns: 4;

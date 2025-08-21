@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { MenuService } from '../../services/menu.service';
 import { MenuSectionComponent } from './section/section.component';
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
   imports: [AsyncPipe, MenuSectionComponent],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent {
   private menuService: MenuService = inject(MenuService);
