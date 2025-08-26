@@ -1,0 +1,28 @@
+.header {
+  background-color: #4a3a25;
+  padding: 1rem 0;
+
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1.2rem;
+
+      &.active {
+        background-color: #6b5438;
+      }
+
+      &:hover {
+        background-color: #5a4530;
+      }
+    }
+  }
+}
