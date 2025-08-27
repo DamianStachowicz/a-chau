@@ -1,0 +1,51 @@
+@import "../../variables";
+
+.button {
+  align-items: center;
+  background-color: #6b5438;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Noto Serif", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: all 250ms;
+  vertical-align: baseline;
+  width: auto;
+
+  &:hover,
+  &:focus {
+    background-color: #5a4530;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.25rem 0.75rem;
+    color: darken(white, 35%);
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: darken(#4a3a25, 5%);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 0.125rem 0.25rem;
+    color: darken(white, 35%);
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
