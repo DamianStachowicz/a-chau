@@ -12,22 +12,22 @@
 .menu {
   &__sections {
     display: block;
-    padding: 24px;
-    column-gap: 16px;
+    padding: 1.5rem;
+    column-gap: 1rem;
   }
 
   &__annotation {
     color: #4a3a25;
     display: block;
-    font-size: 12px;
+    font-size: 0.75rem;
     margin: 0 auto;
-    padding: 6px;
+    padding: 0.375rem;
     text-align: center;
   }
 
   &__logo {
     display: block;
-    margin: 24px auto 12px auto;
+    margin: 1.5rem auto 0.75rem auto;
     width: 40%;
     height: auto;
   }
@@ -36,7 +36,7 @@
 app-menu-section {
   /* Prevent sections from breaking across columns */
   break-inside: avoid-column;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 /* ===== Tablet and up ===== */
@@ -47,17 +47,17 @@ app-menu-section {
 
   .menu {
     &__sections {
-      padding: 16px 32px;
+      padding: 1rem 2rem;
       columns: 2;
     }
 
     &__logo {
-      max-width: 128px;
+      max-width: 8rem;
     }
   }
 
   app-menu-section {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 }
 
@@ -70,14 +70,14 @@ app-menu-section {
   .menu {
     &__sections {
       columns: 3;
-      gap: 24px;
-      padding: 24px 48px;
-      column-gap: 24px;
+      gap: 1.5rem;
+      padding: 1.5rem 3rem;
+      column-gap: 1.5rem;
     }
   }
 
   app-menu-section {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -90,12 +90,12 @@ app-menu-section {
   .menu {
     &__sections {
       columns: 4;
-      column-gap: 32px;
-      gap: 32px;
+      column-gap: 2rem;
+      gap: 2rem;
     }
   }
 
   app-menu-section {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
 }
