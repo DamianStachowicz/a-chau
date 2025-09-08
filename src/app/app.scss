@@ -1,3 +1,15 @@
+:host {
+  position: relative;
+}
+
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .content {
   min-height: calc(100vh - 80px);
 }
