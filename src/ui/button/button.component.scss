@@ -46,6 +46,8 @@
 
   &:disabled {
     background-color: #cccccc;
+    border-color: #cccccc;
+    color: #999999;
     cursor: not-allowed;
   }
 }
