@@ -1,0 +1,123 @@
+.hamburger-menu {
+  position: relative;
+  width: 100%;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    height: 4rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 0 1.25rem;
+  }
+
+  &__checkbox {
+    cursor: pointer;
+    display: block;
+    height: 2rem;
+    opacity: 0;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 2rem;
+    z-index: 5;
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    height: 1.5rem;
+    justify-content: space-between;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.125rem;
+    width: 1.85rem;
+    z-index: 2;
+  }
+
+  &__line {
+    background: white;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+    height: 0.25rem;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+
+    &--1 {
+      transform-origin: 0% 0%;
+    }
+
+    &--2 {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &--3 {
+      transform-origin: 0% 100%;
+    }
+  }
+
+  &__nav {
+    background: #fff;
+    box-shadow: -0.3125rem 0 0.625rem rgba(0, 0, 0, 0.2);
+    height: 100%;
+    padding-top: 5rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    width: 18.75rem;
+    z-index: 1;
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 1.25rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  &__link {
+    color: #333;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #8f6740;
+    }
+
+    &--active {
+      color: #8f6740;
+      font-weight: 700;
+    }
+  }
+
+  // Animation for the hamburger menu
+  &__checkbox:checked ~ &__lines &__line {
+    background-color: #6b5438;
+  }
+
+  &__checkbox:checked ~ &__lines &__line--1 {
+    transform: rotate(45deg);
+  }
+
+  &__checkbox:checked ~ &__lines &__line--2 {
+    transform: scaleY(0);
+  }
+
+  &__checkbox:checked ~ &__lines &__line--3 {
+    transform: rotate(-45deg);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    transform: translateX(0);
+  }
+}

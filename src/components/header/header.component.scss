@@ -1,13 +1,13 @@
 @import "../../variables";
 
 .header {
-  background-color: #4a3a25;
+  background-color: transparent;
   height: $header-height;
   padding: 1rem 0;
 
   .nav {
+    display: none;
     margin: 0 auto;
-    display: flex;
     justify-content: center;
     gap: 2rem;
 
@@ -25,6 +25,20 @@
       &:hover {
         background-color: #5a4530;
       }
+    }
+  }
+}
+
+/* ===== Tablet and up ===== */
+@media (min-width: 768px) {
+  app-hamburger-menu {
+    display: none;
+  }
+
+  .header {
+    background-color: #4a3a25;
+    .nav {
+      display: flex;
     }
   }
 }

@@ -1,0 +1,48 @@
+<div class="hamburger-menu">
+  <div class="hamburger-menu__container">
+    <input class="hamburger-menu__checkbox" id="hamburger-toggle" type="checkbox" />
+    <div class="hamburger-menu__lines">
+      <span class="hamburger-menu__line hamburger-menu__line--1"></span>
+      <span class="hamburger-menu__line hamburger-menu__line--2"></span>
+      <span class="hamburger-menu__line hamburger-menu__line--3"></span>
+    </div>
+
+    <nav class="hamburger-menu__nav">
+      <ul class="hamburger-menu__items">
+        <li class="hamburger-menu__item">
+          <a
+            class="hamburger-menu__link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/"
+            routerLinkActive="hamburger-menu__link--active"
+            >Start</a
+          >
+        </li>
+        <li class="hamburger-menu__item">
+          <a
+            class="hamburger-menu__link"
+            routerLink="/menu"
+            routerLinkActive="hamburger-menu__link--active"
+            >Menu</a
+          >
+        </li>
+        <li class="hamburger-menu__item">
+          <a
+            class="hamburger-menu__link"
+            routerLink="/about"
+            routerLinkActive="hamburger-menu__link--active"
+            >O nas</a
+          >
+        </li>
+        <li class="hamburger-menu__item">
+          <a
+            class="hamburger-menu__link"
+            routerLink="/contact"
+            routerLinkActive="hamburger-menu__link--active"
+            >Kontakt</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
