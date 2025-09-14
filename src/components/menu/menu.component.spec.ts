@@ -14,7 +14,7 @@ describe('MenuComponent', () => {
   beforeEach(async () => {
     // Create a BehaviorSubject to control the menu data during tests
     menuSubject = new BehaviorSubject<Menu>({ annotation: '', sections: [] } as Menu);
-    
+
     mockMenuService = jasmine.createSpyObj('MenuService', ['getMenu']);
     // Return the BehaviorSubject as an observable
     mockMenuService.getMenu.and.returnValue(menuSubject.asObservable());
@@ -39,9 +39,9 @@ describe('MenuComponent', () => {
         {
           id: 'test-section',
           name: 'Test Section',
-          subsections: []
-        }
-      ]
+          subsections: [],
+        },
+      ],
     };
     menuSubject.next(testMenu);
     fixture.detectChanges();

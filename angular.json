@@ -86,12 +86,19 @@
                 "output": ""
               }
             ],
-            "reporters": [
-              "progress",
-              "kjhtml",
-              "coverage"
-            ],
+            "reporters": ["progress", "kjhtml", "coverage"],
             "styles": ["src/styles.scss"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

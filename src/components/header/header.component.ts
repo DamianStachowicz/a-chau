@@ -24,8 +24,9 @@ import { isPlatformBrowser, NgClass } from '@angular/common';
 export class HeaderComponent implements OnInit, OnDestroy {
   public panelVisible: WritableSignal<boolean> = signal<boolean>(false);
   private scrollThreshold: number = 100; // 100px threshold for showing/hiding panel
-  private boundScrollHandler = this.handleScroll.bind(this); // Bind the method once to maintain the same reference
-  private platformId: Object = inject(PLATFORM_ID);
+  // Bind the method once to maintain the same reference
+  private boundScrollHandler = this.handleScroll.bind(this);
+  private platformId: object = inject(PLATFORM_ID);
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {

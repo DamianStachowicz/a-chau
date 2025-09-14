@@ -1,6 +1,7 @@
 {
   "name": "a-chau",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +11,8 @@
     "test:coverage": "ng test --no-watch --code-coverage",
     "coverage:open": "open coverage/a-chau/index.html",
     "serve:ssr:a-chau": "node dist/a-chau/server/server.mjs",
-    "format": "prettier --write \"**/*.{ts,js,json,html,scss,md,json}\""
+    "format": "prettier --write \"**/*.{ts,js,json,html,scss,md,json}\"",
+    "lint": "eslint . --ext .ts,.html"
   },
   "private": true,
   "dependencies": {
@@ -27,12 +29,20 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-eslint/eslint-plugin": "^20.3.0",
+    "@angular-eslint/eslint-plugin-template": "^20.3.0",
+    "@angular-eslint/template-parser": "^20.3.0",
     "@angular/build": "^20.1.5",
     "@angular/cli": "^20.1.5",
     "@angular/compiler-cli": "^20.1.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
