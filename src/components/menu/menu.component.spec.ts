@@ -1,12 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MenuComponent } from './menu.component';
 import { MenuService } from '../../services/menu.service';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Menu } from './menu.interface';
 import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('MenuComponent', () => {
-  let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
   let mockMenuService: jasmine.SpyObj<MenuService>;
   let menuSubject: BehaviorSubject<Menu>;
@@ -28,7 +27,6 @@ describe('MenuComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(MenuComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 

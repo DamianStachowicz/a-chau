@@ -11,5 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class ButtonComponent {
   public disabled: InputSignal<boolean> = input<boolean>(false);
-  public routerLink: InputSignal<string | any[]> = input<string | any[]>('');
+  public routerLink: InputSignal<string | (string | number)[]> = input<
+    string | (string | number)[]
+  >('');
 }
