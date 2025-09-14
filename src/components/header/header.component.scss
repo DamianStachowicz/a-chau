@@ -4,6 +4,7 @@
   background-color: transparent;
   height: $header-height;
   padding: 1rem 0;
+  position: relative;
 
   .nav {
     display: none;
@@ -27,6 +28,23 @@
       }
     }
   }
+
+  &__background {
+    background-color: #4a3a25;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.6s ease-in-out;
+
+    &--visible {
+      height: $header-height;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      opacity: 1;
+    }
+  }
 }
 
 /* ===== Tablet and up ===== */
@@ -37,6 +55,7 @@
 
   .header {
     background-color: #4a3a25;
+
     .nav {
       display: flex;
     }
