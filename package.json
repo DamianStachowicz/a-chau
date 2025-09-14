@@ -12,7 +12,8 @@
     "coverage:open": "open coverage/a-chau/index.html",
     "serve:ssr:a-chau": "node dist/a-chau/server/server.mjs",
     "format": "prettier --write \"**/*.{ts,js,json,html,scss,md,json}\"",
-    "lint": "eslint . --ext .ts,.html"
+    "lint": "eslint . --ext .ts,.html",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -55,6 +57,7 @@
     "postcss-media-query-parser": "^0.2.3",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-attributes": "^1.0.0",
+    "pretty-quick": "^4.2.2",
     "typescript": "~5.8.2"
   }
 }
