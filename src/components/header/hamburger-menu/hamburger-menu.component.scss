@@ -61,14 +61,14 @@
   &__nav {
     background: #fff;
     box-shadow: -0.3125rem 0 0.625rem rgba(0, 0, 0, 0.2);
-    height: 100%;
+    height: 100vh;
     padding-top: 5rem;
     position: fixed;
     right: 0;
     top: 0;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out;
-    width: 18.75rem;
+    width: 80vw;
     z-index: 1;
   }
 
@@ -100,6 +100,17 @@
     }
   }
 
+  &__overlay {
+    background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+
   // Animation for the hamburger menu
   &__checkbox:checked ~ &__lines &__line {
     background-color: #6b5438;
@@ -119,5 +130,9 @@
 
   &__checkbox:checked ~ &__nav {
     transform: translateX(0);
+  }
+
+  &__checkbox:checked ~ &__overlay {
+    display: block;
   }
 }

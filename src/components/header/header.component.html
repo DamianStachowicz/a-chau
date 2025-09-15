@@ -1,8 +1,7 @@
 <header class="header">
-  <div
-    class="header__background"
-    [ngClass]="!!panelVisible() ? 'header__background--visible' : ''"
-  ></div>
+  <div class="header__background" [ngClass]="!!panelVisible() ? 'header__background--visible' : ''">
+    <img class="header__logo" src="logo.png" alt="logo" />
+  </div>
   <app-hamburger-menu></app-hamburger-menu>
   <nav class="nav">
     <ui-button [routerLinkActiveOptions]="{ exact: true }" routerLink="/" routerLinkActive="active"
