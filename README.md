@@ -1,59 +1,110 @@
-# AChau
+# A Chau - Vietnamese Restaurant Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+A modern, responsive website for "A Chau" Vietnamese restaurant built with Angular 20 and featuring Vietnamese-inspired cuisine tailored for local tastes.
 
-## Development server
+## 🍜 About
 
-To start a local development server, run:
+A Chau showcases Vietnamese-inspired cuisine with a modern web experience. The website features:
 
-```bash
-ng serve
-```
+- **Unique Menu Display**: Interactive menu with Vietnamese-inspired dishes and descriptions
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Modern Architecture**: Built with Angular 20 standalone components and signals
+- **Smooth Navigation**: Clean header with hamburger menu for mobile devices
+- **Performance Focused**: Optimized for speed and user experience
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Technologies
 
-## Code scaffolding
+- **Angular 20** - Latest Angular framework with standalone components
+- **TypeScript** - Type-safe development
+- **SCSS** - Modern CSS preprocessing
+- **Angular Signals** - Reactive state management
+- **Angular Router** - Client-side navigation
+- **ESLint** - Code quality and linting
+- **Karma + Jasmine** - Unit testing framework
+- **Husky** - Git hooks for code quality
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📦 Installation
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+1. **Clone the repository:**
 
 ```bash
-ng build
+git clone https://github.com/DamianStachowicz/a-chau.git
+cd a-chau
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+2. **Install dependencies:**
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+3. **Start development server:**
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The application will be available at `http://localhost:4200/`
 
-## Additional Resources
+## 🛠️ Development Scripts
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Command                 | Description                    |
+| ----------------------- | ------------------------------ |
+| `npm start`             | Start development server       |
+| `npm run build`         | Build for production           |
+| `npm test`              | Run unit tests                 |
+| `npm run test:coverage` | Run tests with coverage report |
+| `npm run lint`          | Run ESLint code analysis       |
+| `npm run format`        | Format code with Prettier      |
+
+## 🧪 Testing
+
+The project includes comprehensive unit tests with 80% coverage requirement:
+
+```bash
+# Run tests in watch mode
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Open coverage report
+npm run coverage:open
+```
+
+**Coverage Requirements:**
+
+- Statements: ≥80%
+- Branches: ≥80%
+- Functions: ≥80%
+- Lines: ≥80%
+
+## 🏗️ Project Structure
+
+```text
+src/
+├── app/                    # Main application module
+├── components/             # Feature components
+│   ├── header/            # Navigation header
+│   ├── home/              # Landing page
+│   ├── menu/              # Menu display
+│   └── footer/            # Site footer
+├── services/              # Angular services
+├── ui/                    # Reusable UI components
+└── assets/                # Static assets
+```
+
+## 🔧 Code Quality
+
+The project enforces high code quality standards:
+
+- **Pre-commit hooks**: Automatic formatting and linting
+- **Pre-push hooks**: Test execution and coverage validation
+- **ESLint configuration**: Modern TypeScript and Angular rules
+- **Prettier integration**: Consistent code formatting
+
+## 🔗 Links
+
+- [Angular Documentation](https://angular.dev)
+- [Angular CLI Reference](https://angular.dev/tools/cli)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
