@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, WritableSignal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,4 +9,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./hamburger-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HamburgerMenuComponent {}
+export class HamburgerMenuComponent {
+  public isMenuOpen: WritableSignal<boolean> = signal<boolean>(false);
+
+  public toggleMenu(): void {
+    this.isMenuOpen.update(current => !current);
+  }
+
+  public closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
+}

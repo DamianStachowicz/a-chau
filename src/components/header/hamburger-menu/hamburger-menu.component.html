@@ -1,7 +1,13 @@
 <div class="hamburger-menu">
   <div class="hamburger-menu__container">
-    <input class="hamburger-menu__checkbox" id="hamburger-toggle" type="checkbox" />
-    <div class="hamburger-menu__lines">
+    <input
+      class="hamburger-menu__checkbox"
+      id="hamburger-toggle"
+      [checked]="isMenuOpen()"
+      (change)="toggleMenu()"
+      type="checkbox"
+    />
+    <div class="hamburger-menu__lines" (click)="toggleMenu()">
       <span class="hamburger-menu__line hamburger-menu__line--1"></span>
       <span class="hamburger-menu__line hamburger-menu__line--2"></span>
       <span class="hamburger-menu__line hamburger-menu__line--3"></span>
@@ -15,6 +21,7 @@
           <a
             class="hamburger-menu__link"
             [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
             routerLink="/"
             routerLinkActive="hamburger-menu__link--active"
             >Start</a
@@ -23,6 +30,7 @@
         <li class="hamburger-menu__item">
           <a
             class="hamburger-menu__link"
+            (click)="closeMenu()"
             routerLink="/menu"
             routerLinkActive="hamburger-menu__link--active"
             >Menu</a
@@ -31,6 +39,7 @@
         <li class="hamburger-menu__item">
           <a
             class="hamburger-menu__link"
+            (click)="closeMenu()"
             routerLink="/about"
             routerLinkActive="hamburger-menu__link--active"
             >O nas</a
@@ -39,6 +48,7 @@
         <li class="hamburger-menu__item">
           <a
             class="hamburger-menu__link"
+            (click)="closeMenu()"
             routerLink="/contact"
             routerLinkActive="hamburger-menu__link--active"
             >Kontakt</a
