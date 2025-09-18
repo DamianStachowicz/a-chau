@@ -10,6 +10,7 @@
 
   &__logo {
     display: block;
+    flex-shrink: 0;
     height: auto;
     margin: 0 auto 1rem;
     max-height: 3rem;
@@ -51,6 +52,14 @@
     filter: invert(1);
     height: 3.5rem;
     width: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    .footer__logo {
+      margin: 0 2rem 0 0;
+    }
   }
 }
 
