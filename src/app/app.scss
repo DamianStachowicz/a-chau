@@ -1,3 +1,5 @@
+@use "../variables.scss";
+
 :host {
   position: relative;
 }
@@ -12,4 +14,10 @@ app-header {
 
 .content {
   min-height: calc(100vh - 80px);
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: variables.$header-height;
+  }
 }

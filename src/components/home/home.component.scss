@@ -1,3 +1,5 @@
+@use "../../variables.scss";
+
 .home {
   display: flex;
   justify-content: center;
@@ -50,6 +52,14 @@
     ui-button {
       margin-top: 1rem;
       z-index: 2;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .home {
+    &__title {
+      height: calc(100vh - variables.$header-height);
     }
   }
 }
