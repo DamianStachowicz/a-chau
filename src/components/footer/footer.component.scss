@@ -1,0 +1,62 @@
+.footer {
+  background-color: #4a3a25;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+
+  &__logo {
+    display: block;
+    height: auto;
+    margin: 0 auto 1rem;
+    max-height: 3rem;
+    max-width: 100%;
+    object-fit: contain;
+    width: auto;
+  }
+
+  &__section {
+    padding: 0.5rem;
+  }
+
+  &__label {
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  &__item {
+    margin: 0.5rem 0;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icon {
+    filter: invert(1);
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+
+.copyright {
+  color: #333;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  text-align: center;
+}
