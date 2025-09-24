@@ -7,9 +7,12 @@
 
 .about-us {
   @include mixins.lotus-background;
-  color: #4a3a25;
-  height: 100%;
-  padding: 2rem;
+
+  & {
+    color: #4a3a25;
+    padding: 2rem;
+    height: 100%;
+  }
 
   &__logo {
     display: block;

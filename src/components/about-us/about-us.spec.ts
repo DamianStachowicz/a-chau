@@ -8,6 +8,7 @@ import { AboutUs } from './about-us.interface';
 
 describe('AboutUsComponent', () => {
   let fixture: ComponentFixture<AboutUsComponent>;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let aboutUsService: jasmine.SpyObj<AboutUsService>;
 
   const mockAboutUsData: AboutUs = {
@@ -17,6 +18,7 @@ describe('AboutUsComponent', () => {
 
   beforeEach(async () => {
     const aboutUsServiceSpy = jasmine.createSpyObj('AboutUsService', ['getAboutUs']);
+    aboutUsServiceSpy.getAboutUs.and.returnValue(of(mockAboutUsData));
 
     await TestBed.configureTestingModule({
       imports: [AboutUsComponent],
@@ -29,7 +31,8 @@ describe('AboutUsComponent', () => {
     fixture = TestBed.createComponent(AboutUsComponent);
     aboutUsService = TestBed.inject(AboutUsService) as jasmine.SpyObj<AboutUsService>;
 
-    aboutUsService.getAboutUs.and.returnValue(of(mockAboutUsData));
+    fixture.detectChanges();
+    await fixture.whenStable();
     fixture.detectChanges();
   });
 
