@@ -1,0 +1,9 @@
+<section class="about-us">
+  <img class="about-us__logo" src="logo.png" alt="logo" />
+  @if (aboutUs$ | async; as aboutUs) {
+    <h1 class="about-us__heading">{{ aboutUs.heading }}</h1>
+    @for (paragraph of aboutUs.content; track paragraph) {
+      <p class="about-us__paragraph">{{ paragraph }}</p>
+    }
+  }
+</section>

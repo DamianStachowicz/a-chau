@@ -1,0 +1,49 @@
+@use "../../mixins";
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.about-us {
+  @include mixins.lotus-background;
+  color: #4a3a25;
+  height: 100%;
+  padding: 2rem;
+
+  &__logo {
+    display: block;
+    margin: 1rem auto 3rem auto;
+    max-width: 10rem;
+    height: auto;
+  }
+
+  &__heading {
+    @include mixins.section-heading;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-us {
+    padding: 2rem 4rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-us {
+    padding: 3rem 6rem 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-us {
+    padding: 4rem 8rem 8rem;
+  }
+}

@@ -1,0 +1,32 @@
+// Shared mixins for the application
+
+@mixin section-heading {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+@mixin lotus-background {
+  background-image: url("/lotus.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 50%;
+  background-attachment: fixed;
+
+  @media (min-width: 768px) {
+    background-size: 30%;
+  }
+
+  @media (min-width: 1024px) {
+    background-size: 25%;
+  }
+
+  @media (min-width: 1280px) {
+    background-size: 20%;
+  }
+}

@@ -12,10 +12,6 @@ app-header {
   z-index: 1000;
 }
 
-.content {
-  min-height: calc(100vh - 80px);
-}
-
 @media (min-width: 768px) {
   .content {
     padding-top: variables.$header-height;
