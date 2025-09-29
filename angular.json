@@ -27,7 +27,10 @@
                 "output": ""
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -87,7 +90,10 @@
               }
             ],
             "reporters": ["progress", "kjhtml", "coverage"],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css"
+            ]
           }
         },
         "lint": {

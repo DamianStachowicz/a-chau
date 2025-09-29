@@ -1,0 +1,46 @@
+<section class="contact">
+  <img class="contact__logo" src="logo.png" alt="logo" />
+  <h3 class="contact__title--line-1">Masz pytania?</h3>
+  <h2 class="contact__title--line-2">Chcesz zarezerwować stolik?</h2>
+  <h1 class="contact__title--line-3">Skontaktuj się z nami już teraz!</h1>
+  @if (contact$ | async; as contactInfo) {
+    <section class="contact__item">
+      <h2 class="contact__item-title">Adres</h2>
+      <p class="contact__item-content">
+        {{ contactInfo.address.street }}, {{ contactInfo.address.postalCode }},
+        {{ contactInfo.address.city }}
+      </p>
+      <h2 class="contact__item-title">Telefon</h2>
+      <p class="contact__item-content">
+        <a href="tel:{{ contactInfo.phone.link }}">{{ contactInfo.phone.display }}</a>
+      </p>
+      <h2 class="contact__item-title">Godziny otwarcia</h2>
+      <div class="contact__item-content">
+        {{ contactInfo.openingHours.weekdays.days }}: {{ contactInfo.openingHours.weekdays.hours }}
+        <br />
+        {{ contactInfo.openingHours.weekend.days }}: {{ contactInfo.openingHours.weekend.hours }}
+      </div>
+      <hr class="contact__divider" />
+      <div class="contact__item-content contact__socials">
+        <a href="{{ contactInfo.socials.facebook.url }}" target="_blank">
+          <img
+            class="contact__icon"
+            [src]="contactInfo.socials.facebook.icon"
+            [alt]="contactInfo.socials.facebook.alt"
+          />
+        </a>
+        <a href="{{ contactInfo.socials.maps.url }}" target="_blank">
+          <img
+            class="contact__icon"
+            [src]="contactInfo.socials.maps.icon"
+            [alt]="contactInfo.socials.maps.alt"
+          />
+        </a>
+      </div>
+    </section>
+
+    <section class="contact__map">
+      <app-map [location]="contactInfo.map"></app-map>
+    </section>
+  }
+</section>

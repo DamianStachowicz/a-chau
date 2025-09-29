@@ -1,0 +1,38 @@
+{
+  "address": {
+    "street": "Karabeli 2D",
+    "postalCode": "01-313",
+    "city": "Warszawa"
+  },
+  "phone": {
+    "display": "+48 22 665 25 26",
+    "link": "tel:+48226652526"
+  },
+  "openingHours": {
+    "weekdays": {
+      "days": "Pon-Pt",
+      "hours": "11:00 - 20:00"
+    },
+    "weekend": {
+      "days": "Sob-Nd",
+      "hours": "11:00 - 19:00"
+    }
+  },
+  "socials": {
+    "facebook": {
+      "url": "https://www.facebook.com/profile.php?id=100053004776093",
+      "icon": "facebook.svg",
+      "alt": "Facebook"
+    },
+    "maps": {
+      "url": "https://maps.app.goo.gl/pcZG2Qk2roTJ5FCz5",
+      "icon": "map-marker.svg",
+      "alt": "Google Maps"
+    }
+  },
+  "map": {
+    "latitude": 52.22870140039739,
+    "longitude": 20.90223476567207,
+    "name": "Restauracja A Chau"
+  }
+}

@@ -1,4 +1,3 @@
-// Import the menu data from the JSON file
 import { Injectable } from '@angular/core';
 import aboutUsData from '../../public/about-us.json';
 import { delay, Observable, of } from 'rxjs';
