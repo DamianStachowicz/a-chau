@@ -3,6 +3,19 @@ import { HomeComponent } from './home.component';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MapLocation } from '../map/map-location.interface';
+import { MapComponent } from '../map/map.component';
+
+// Mock MapComponent
+@Component({
+  selector: 'app-map',
+  template: '<div class="mock-map" data-testid="mock-map">Mock Map Component</div>',
+  standalone: true,
+})
+class MockMapComponent {
+  @Input() location!: MapLocation;
+}
 
 describe('HomeComponent', () => {
   let fixture: ComponentFixture<HomeComponent>;
@@ -11,7 +24,13 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HomeComponent],
       providers: [provideZonelessChangeDetection(), provideRouter([])],
-    }).compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+    })
+      .overrideComponent(HomeComponent, {
+        remove: { imports: [MapComponent] },
+        add: { imports: [MockMapComponent] },
+      })
+      .compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
     fixture.detectChanges();
@@ -45,5 +64,17 @@ describe('HomeComponent', () => {
     Object.values(elements).forEach(element => {
       expect(element).toBeTruthy();
     });
+  });
+
+  it('should render mock map component', () => {
+    const mockMapElement = fixture.debugElement.query(By.css('[data-testid="mock-map"]'));
+    expect(mockMapElement).toBeTruthy();
+    expect(mockMapElement.nativeElement.textContent.trim()).toBe('Mock Map Component');
+  });
+
+  it('should pass location to map component', () => {
+    const mapComponent = fixture.debugElement.query(By.directive(MockMapComponent));
+    expect(mapComponent).toBeTruthy();
+    expect(mapComponent.componentInstance.location).toBeDefined();
   });
 });
