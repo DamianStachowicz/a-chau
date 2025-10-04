@@ -4,4 +4,81 @@
     <h2>tworzone z pasją, podawane z sercem</h2>
     <ui-button routerLink="/menu">Poznaj nasze smaki</ui-button>
   </section>
+  <section class="home__section about-us">
+    <h2 class="home__heading">Warszawa Bemowo</h2>
+    <p class="home__paragraph">30 lat smaków Azji w sercu dzielnicy 🍜❤️</p>
+
+    <p class="home__paragraph">
+      Nasza restauracja to miejsce, gdzie tradycja spotyka się z pasją – od ponad trzech dekad
+      gotujemy z sercem, wybierając codziennie najświeższe składniki. Każde danie to opowieść o
+      przyjaźni z gośćmi, którzy stali się częścią naszej rodziny.
+    </p>
+
+    <p class="home__paragraph">
+      U Vana każdy posiłek to spotkanie starych znajomych – zapraszamy na smaki, które łączą
+      pokolenia! 🌿
+    </p>
+  </section>
+  <section class="home__section menu-sample">
+    <h2 class="home__heading">Nasze menu</h2>
+    <p class="home__paragraph">
+      Odkryj nasze wyjątkowe menu, pełne autentycznych smaków Wietnamu. Od klasycznych dań po
+      nowoczesne interpretacje – każdy znajdzie coś dla siebie!
+    </p>
+    <div class="home__menu-items">
+      <div class="home__menu-item">
+        <h2 class="home__menu-title">Kurczak Mistrza / Chilli</h2>
+        <p class="home__menu-price">32 zł</p>
+        <p class="home__menu-description">
+          Soczysty kurczak w aromatycznym sosie z chili, lekko słodki z nutą trawy cytrynowej,
+          podawany z ryżem jaśminowym i świeżymi warzywami.
+        </p>
+      </div>
+      <div class="home__menu-item">
+        <h3 class="home__menu-title">Kurczak w cieście</h3>
+        <p class="home__menu-price">31 zł</p>
+        <p class="home__menu-description">
+          Chrupiące kawałki kurczaka w puszystym cieście z wiórkami kokosowymi, podawane z sosem
+          słodko-kwaśnym i świeżymi warzywami.
+        </p>
+      </div>
+      <div class="home__menu-item">
+        <h3 class="home__menu-title">Kalmary chrupiące</h3>
+        <p class="home__menu-price">40 zł</p>
+        <p class="home__menu-description">
+          Delikatne plastry kalmarów w chrupiącej panierce, podawane z ryżem jaśminowym i świeżymi
+          warzywami.
+        </p>
+      </div>
+    </div>
+    <ui-button routerLink="/menu">Zobacz menu</ui-button>
+  </section>
+  <section class="home__section contact">
+    <h2 class="home__heading">Wpadnij do nas</h2>
+    <p class="home__paragraph">
+      📍 Adres: ul. Karabeli 2D, 01-313 Warszawa Bemowo
+      <br />
+      📞 Telefon: <a href="tel:+48665252626">+48 665 25 26</a>
+    </p>
+    <br />
+    <app-map [location]="location"></app-map>
+    <br />
+    <h2 class="home__heading">Otwarte</h2>
+    <p class="home__paragraph">
+      Pon-Pt: 11:00 - 20:00<br />
+      Sob-Nd: 11:00 - 19:00
+    </p>
+  </section>
+  <section class="home__section gallery">
+    <img src="ACHAU_16.jpg" />
+    <img src="ACHAU_22.jpg" />
+    <img src="ACHAU_23.jpg" />
+    <img src="ACHAU_32.jpg" />
+    <img src="ACHAU_35.jpg" />
+  </section>
+  <section class="home__section reviews">
+    <h2 class="home__heading">Opinie naszych klientów</h2>
+    <p class="home__paragraph reviews__quote">Najlepsze sajgonki w Warszawie!</p>
+    <p class="home__paragraph reviews__author">- Damian</p>
+  </section>
 </div>

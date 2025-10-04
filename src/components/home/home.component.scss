@@ -1,8 +1,15 @@
 @use "../../variables.scss";
+@use "../../mixins";
 
 .home {
-  display: flex;
-  justify-content: center;
+  & {
+    color: #4a3a25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 2rem;
+  }
 
   &__title {
     background: url("/danie.jpg");
@@ -54,6 +61,92 @@
       z-index: 2;
     }
   }
+
+  &__heading {
+    @include mixins.section-heading;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+
+  &__section {
+    padding: 2rem;
+
+    &:nth-child(odd) {
+      background-color: #4a3a25;
+      color: white;
+    }
+
+    &:nth-child(even) {
+      background-color: #fffdf2;
+      color: #4a3a25;
+    }
+  }
+
+  &__menu {
+    &-item {
+      background-color: rgba(132, 108, 48, 0.05);
+      border: 1px solid #fffdf2;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 12px;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      @include mixins.section-heading;
+      text-align: left;
+    }
+
+    &-price {
+      font-family: "Noto Serif", serif;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    &-description {
+      grid-column: 1 / -1;
+      text-align: justify;
+    }
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+.reviews {
+  min-height: 200px;
+
+  &__quote {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  &__author {
+    text-align: right;
+    font-weight: bold;
+  }
+}
+
+.map {
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -62,4 +155,46 @@
       height: calc(100vh - variables.$header-height);
     }
   }
+
+  .contact {
+    .home__paragraph {
+      text-align: center;
+    }
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__title {
+      grid-column: 1 / -1;
+    }
+
+    &__section {
+      &:nth-child(4n),
+      &:nth-child(4n + 3) {
+        background-color: #4a3a25;
+        color: white;
+      }
+
+      &:nth-child(4n + 1),
+      &:nth-child(4n + 2) {
+        background-color: #fffdf2;
+        color: #4a3a25;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
 }
