@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import aboutUsData from '../../public/about-us.json';
+import aboutUsData from '../../public/data/about-us.json';
 import { delay, Observable, of } from 'rxjs';
 import { AboutUs } from '../components/about-us/about-us.interface';
 

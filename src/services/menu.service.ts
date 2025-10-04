@@ -3,7 +3,7 @@ import { delay, Observable, of } from 'rxjs';
 import { Menu } from '../components/menu/menu.interface';
 
 // Import the menu data from the JSON file
-import menuData from '../../public/menu.json';
+import menuData from '../../public/data/menu.json';
 
 @Injectable({ providedIn: 'root' })
 export class MenuService {

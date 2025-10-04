@@ -44,12 +44,12 @@ describe('ContactComponent', () => {
     socials: {
       facebook: {
         url: 'https://facebook.com/test',
-        icon: 'facebook.svg',
+        icon: 'images/facebook.svg',
         alt: 'Facebook',
       },
       maps: {
         url: 'https://maps.google.com/test',
-        icon: 'map-marker.svg',
+        icon: 'images/map-marker.svg',
         alt: 'Google Maps',
       },
     },

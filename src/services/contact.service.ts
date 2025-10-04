@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import contactData from '../../public/contact.json';
+import contactData from '../../public/data/contact.json';
 import { delay, Observable, of } from 'rxjs';
 import { Contact } from '../components/contact/contact.interface';
 

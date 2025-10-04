@@ -21,12 +21,12 @@
   "socials": {
     "facebook": {
       "url": "https://www.facebook.com/profile.php?id=100053004776093",
-      "icon": "facebook.svg",
+      "icon": "images/facebook.svg",
       "alt": "Facebook"
     },
     "maps": {
       "url": "https://maps.app.goo.gl/pcZG2Qk2roTJ5FCz5",
-      "icon": "map-marker.svg",
+      "icon": "images/map-marker.svg",
       "alt": "Google Maps"
     }
   },
