@@ -1,0 +1,31 @@
+<div class="reviews">
+  <h2 class="reviews__title">Opinie naszych klientów</h2>
+  <div class="reviews__container">
+    <div class="reviews__strip" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      @for (review of reviews(); track $index) {
+        <div class="review">
+          <p class="review__quote">{{ review.quote }}</p>
+          <p class="review__author">- {{ review.author }}</p>
+        </div>
+      }
+    </div>
+  </div>
+  @if (reviews().length > 1) {
+    <div class="reviews__navigation">
+      <button
+        class="reviews__button reviews__button--prev"
+        [attr.aria-label]="'Previous review'"
+        (click)="showPrevious()"
+      >
+        ‹
+      </button>
+      <button
+        class="reviews__button reviews__button--next"
+        [attr.aria-label]="'Next review'"
+        (click)="showNext()"
+      >
+        ›
+      </button>
+    </div>
+  }
+</div>
