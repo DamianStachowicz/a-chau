@@ -20,7 +20,7 @@ import { Review } from './review.interface';
 export class ReviewDisplayComponent implements OnInit {
   private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
   public reviews: InputSignal<Review[]> = input.required<Review[]>();
-  private autoAdvanceInterval: any;
+  private autoAdvanceInterval: ReturnType<typeof setInterval> | null = null;
   private intervalLength = 5000; // 5 seconds
   public currentIndex = 0;
 

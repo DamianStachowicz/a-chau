@@ -32,8 +32,11 @@ describe('ReviewDisplayComponent', () => {
     jasmine.clock().uninstall();
 
     // Clean up any timers
-    if (component && (component as any).autoAdvanceInterval) {
-      clearInterval((component as any).autoAdvanceInterval);
+    const componentWithPrivates = component as unknown as {
+      autoAdvanceInterval: ReturnType<typeof setInterval> | null;
+    };
+    if (component && componentWithPrivates.autoAdvanceInterval) {
+      clearInterval(componentWithPrivates.autoAdvanceInterval);
     }
   });
 
