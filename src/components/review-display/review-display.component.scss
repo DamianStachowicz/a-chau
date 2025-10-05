@@ -5,6 +5,13 @@
   position: relative;
   padding: 2rem 0;
 
+  // CSS custom properties for dynamic button colors
+  --button-border-color: var(--review-button-border, #4a3a25);
+  --button-text-color: var(--review-button-text, #4a3a25);
+  --button-hover-bg: var(--review-button-hover-bg, #4a3a25);
+  --button-hover-text: var(--review-button-hover-text, white);
+  --button-focus-shadow: var(--review-button-focus-shadow, rgba(74, 58, 37, 0.3));
+
   &__title {
     @include mixins.section-heading();
     margin-bottom: 2rem;
@@ -32,8 +39,8 @@
 
   &__button {
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--button-border-color);
+    color: var(--button-text-color);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -46,17 +53,21 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: #4a3a25;
-      color: white;
+      background: var(--button-hover-bg);
+      color: var(--button-hover-text);
+      border-color: var(--button-hover-bg);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(74, 58, 37, 0.3);
+      box-shadow: 0 0 0 3px var(--button-focus-shadow);
     }
 
     &:active {
-      transform: scale(0.95);
+      transform: scale(0.95) translateY(0);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     }
   }
 }

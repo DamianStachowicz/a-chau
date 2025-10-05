@@ -79,11 +79,25 @@
     &:nth-child(odd) {
       background-color: #4a3a25;
       color: white;
+
+      // CSS custom properties for review buttons on dark background
+      --review-button-border: white;
+      --review-button-text: white;
+      --review-button-hover-bg: white;
+      --review-button-hover-text: #4a3a25;
+      --review-button-focus-shadow: rgba(255, 255, 255, 0.3);
     }
 
     &:nth-child(even) {
       background-color: #fffdf2;
       color: #4a3a25;
+
+      // CSS custom properties for review buttons on light background
+      --review-button-border: #4a3a25;
+      --review-button-text: #4a3a25;
+      --review-button-hover-bg: #4a3a25;
+      --review-button-hover-text: white;
+      --review-button-focus-shadow: rgba(74, 58, 37, 0.3);
     }
   }
 
