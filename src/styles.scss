@@ -22,3 +22,17 @@ body {
   background-color: #fffdf2;
   font-family: "Noto Serif", serif;
 }
+
+.maplibregl-popup-content {
+  & {
+    border-radius: 12px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    padding: 1rem !important;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

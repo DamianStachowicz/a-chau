@@ -1,10 +1,10 @@
-# A Chau - Vietnamese Restaurant Website
+# Á Châu - Vietnamese Restaurant Website
 
-A modern, responsive website for "A Chau" Vietnamese restaurant built with Angular 20 and featuring Vietnamese-inspired cuisine tailored for local tastes.
+A modern, responsive website for "Á Châu" Vietnamese restaurant built with Angular 20 and featuring Vietnamese-inspired cuisine tailored for local tastes.
 
 ## 🍜 About
 
-A Chau showcases Vietnamese-inspired cuisine with a modern web experience. The website features:
+Á Châu showcases Vietnamese-inspired cuisine with a modern web experience. The website features:
 
 - **Unique Menu Display**: Interactive menu with Vietnamese-inspired dishes and descriptions
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices

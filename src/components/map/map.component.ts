@@ -1,77 +1,96 @@
-import { AfterViewInit, Component, PLATFORM_ID, inject, input, InputSignal } from '@angular/core';
+import {
+  Component,
+  input,
+  InputSignal,
+  ChangeDetectionStrategy,
+  PLATFORM_ID,
+  inject,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MapLocation } from './map-location.interface';
+import { MapComponent, MarkerComponent, PopupComponent } from '@maplibre/ngx-maplibre-gl';
+import { StyleSpecification } from 'maplibre-gl';
 
+/**
+ * A workaround is used to replace MapLibre's default English cooperative gestures
+ * messages with Polish translations. This is done by directly manipulating the DOM
+ * after the map has loaded, as a built-in way to localize these messages seems to
+ * not be working correctly in ngx-maplibre-gl.
+ */
 @Component({
   selector: 'app-map',
-  imports: [],
+  imports: [MapComponent, MarkerComponent, PopupComponent],
   templateUrl: './map.component.html',
-  styleUrl: './map.component.scss',
+  styleUrls: ['./map.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MapComponent implements AfterViewInit {
-  private map?: L.Map;
-  private L?: typeof import('leaflet');
-  private platformId = inject(PLATFORM_ID);
+export class MapContainerComponent {
   public location: InputSignal<MapLocation> = input.required<MapLocation>();
+  private platformId: object = inject(PLATFORM_ID);
 
-  public ngAfterViewInit(): void {
+  private readonly polishLocale = {
+    cooperativeGesturesMac: 'Użyj ⌘ + przewijanie, aby powiększyć mapę',
+    cooperativeGesturesWindows: 'Użyj Ctrl + przewijanie, aby powiększyć mapę',
+    cooperativeGesturesMobile: 'Użyj dwóch palców, aby przesunąć mapę',
+  };
+
+  // OSM-style map configuration
+  public mapStyle: StyleSpecification = {
+    version: 8,
+    sources: {
+      osm: {
+        type: 'raster',
+        tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+        tileSize: 256,
+        attribution: '© Współtwórcy OpenStreetMap',
+      },
+    },
+    layers: [
+      {
+        id: 'osm-layer',
+        type: 'raster',
+        source: 'osm',
+        minzoom: 0,
+        maxzoom: 20,
+      },
+    ],
+    glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
+  };
+
+  public onMapLoad(): void {
+    // Only run in browser environment
     if (isPlatformBrowser(this.platformId)) {
-      this.loadLeaflet().then(() => {
-        setTimeout(() => this.initMap());
-      });
+      setTimeout(() => this.replaceMapMessages(), 0);
     }
   }
 
-  private async loadLeaflet(): Promise<void> {
-    const leafletModule = await import('leaflet');
-    this.L = leafletModule;
+  private replaceMapMessages(): void {
+    // Only run in browser environment
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Check if we're on macOS using modern detection methods
+    const isMac = this.detectMacOS();
+
+    // Find and replace desktop message
+    const desktopMessage = document.querySelector('.maplibregl-desktop-message');
+    if (desktopMessage) {
+      const polishDesktopMessage = isMac
+        ? this.polishLocale.cooperativeGesturesMac
+        : this.polishLocale.cooperativeGesturesWindows;
+      desktopMessage.textContent = polishDesktopMessage;
+    }
+
+    // Find and replace mobile message
+    const mobileMessage = document.querySelector('.maplibregl-mobile-message');
+    if (mobileMessage) {
+      mobileMessage.textContent = this.polishLocale.cooperativeGesturesMobile;
+    }
   }
 
-  private initMap(): void {
-    // Additional browser check for safety
-    if (typeof document === 'undefined' || !this.L) {
-      return;
-    }
-
-    const defaultIcon = this.L.icon({
-      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-    });
-
-    // Set the default marker icon
-    this.L.Marker.prototype.options.icon = defaultIcon;
-
-    const mapContainer = document.getElementById('map');
-    if (!mapContainer) {
-      console.error('Map container not found! Make sure <div id="map"></div> exists in the DOM.');
-      return;
-    }
-
-    // Create map centered at the provided location
-    const currentLocation = this.location();
-    this.map = this.L.map('map').setView([currentLocation.latitude, currentLocation.longitude], 15);
-
-    // Add OpenStreetMap tiles
-    this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this.map);
-
-    // Add marker for the location
-    if (this.map && this.L) {
-      const currentLocation = this.location();
-      this.L.marker([currentLocation.latitude, currentLocation.longitude])
-        .addTo(this.map)
-        .bindPopup(
-          `
-          <b>${currentLocation.name}</b><br />
-          <a href="https://www.google.com/maps/dir//A+chau,+Karabeli+2D,+01-313+Warszawa/@52.2287107,20.8973621,754m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x471ecb275fc7c399:0x76816cc62925611b!2m2!1d20.9022287!2d52.2286861!3e0?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Wskazówki dojazdu</a>
-        `
-        )
-        .openPopup();
-    }
+  private detectMacOS(): boolean {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return userAgent.includes('mac os x') || userAgent.includes('macintosh');
   }
 }

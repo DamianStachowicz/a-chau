@@ -5,7 +5,7 @@ import { provideRouter } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MapLocation } from '../map/map-location.interface';
-import { MapComponent } from '../map/map.component';
+import { MapContainerComponent } from '../map/map.component';
 
 // Mock MapComponent
 @Component({
@@ -27,7 +27,7 @@ describe('HomeComponent', () => {
       schemas: [NO_ERRORS_SCHEMA],
     })
       .overrideComponent(HomeComponent, {
-        remove: { imports: [MapComponent] },
+        remove: { imports: [MapContainerComponent] },
         add: { imports: [MockMapComponent] },
       })
       .compileComponents();

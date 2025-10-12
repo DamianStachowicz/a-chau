@@ -1,182 +1,259 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MapComponent } from './map.component';
+import { MapContainerComponent } from './map.component';
 import { MapLocation } from './map-location.interface';
-import { PLATFORM_ID } from '@angular/core';
-import { provideZonelessChangeDetection } from '@angular/core';
+import {
+  provideZonelessChangeDetection,
+  PLATFORM_ID,
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  NO_ERRORS_SCHEMA,
+} from '@angular/core';
+import { MapComponent, MarkerComponent, PopupComponent } from '@maplibre/ngx-maplibre-gl';
+import { LngLatLike, StyleSpecification } from 'maplibre-gl';
 import { By } from '@angular/platform-browser';
 
-// Type definitions for mocks
-interface MockLeafletMap {
-  setView: jasmine.Spy;
+// Create simple mock components that don't depend on MapLibre services
+@Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'mgl-map',
+  template: '<ng-content></ng-content>',
+  standalone: true,
+})
+class MockMapComponent {
+  @Input() style?: string | StyleSpecification;
+  @Input() center?: LngLatLike;
+  @Input() zoom?: number[];
+  @Input() cooperativeGestures?: boolean;
+  @Output() mapLoad = new EventEmitter<unknown>();
+
+  getStyle() {
+    return this.style;
+  }
+  getCenter() {
+    return this.center;
+  }
+  getZoom() {
+    return this.zoom;
+  }
+  getCooperativeGestures() {
+    return this.cooperativeGestures;
+  }
 }
 
-interface MockLeafletTileLayer {
-  addTo: jasmine.Spy;
+@Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'mgl-marker',
+  template: '<ng-content></ng-content>',
+  standalone: true,
+})
+class MockMarkerComponent {
+  @Input() lngLat?: LngLatLike;
+
+  getLngLat() {
+    return this.lngLat;
+  }
 }
 
-interface MockLeafletMarker {
-  addTo: jasmine.Spy;
+@Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'mgl-popup',
+  template: '<ng-content></ng-content>',
+  standalone: true,
+})
+class MockPopupComponent {
+  @Input() marker?: MockMarkerComponent;
+  @Input() focusAfterOpen?: boolean;
+  @Input() closeButton?: boolean;
+
+  getMarker() {
+    return this.marker;
+  }
+  getFocusAfterOpen() {
+    return this.focusAfterOpen;
+  }
+  getCloseButton() {
+    return this.closeButton;
+  }
 }
 
-interface MockLeaflet {
-  icon: jasmine.Spy;
-  Marker: { prototype: { options: Record<string, unknown> } };
-  map: jasmine.Spy;
-  tileLayer: jasmine.Spy;
-  marker: jasmine.Spy;
-}
-
-describe('MapComponent', () => {
-  let component: MapComponent;
-  let fixture: ComponentFixture<MapComponent>;
-  const mockLeaflet: MockLeaflet = {
-    icon: jasmine.createSpy('icon').and.returnValue({}),
-    Marker: { prototype: { options: {} } },
-    map: jasmine.createSpy('map').and.returnValue({
-      setView: jasmine.createSpy('setView').and.returnValue({}),
-    }),
-    tileLayer: jasmine.createSpy('tileLayer').and.returnValue({
-      addTo: jasmine.createSpy('addTo'),
-    }),
-    marker: jasmine.createSpy('marker').and.returnValue({
-      addTo: jasmine.createSpy('addTo').and.returnValue({
-        bindPopup: jasmine.createSpy('bindPopup').and.returnValue({
-          openPopup: jasmine.createSpy('openPopup'),
-        }),
-      }),
-    }),
-  };
+describe('MapContainerComponent', () => {
+  let component: MapContainerComponent;
+  let fixture: ComponentFixture<MapContainerComponent>;
 
   const mockLocation: MapLocation = {
-    latitude: 52.2287,
-    longitude: 20.9022,
-    name: 'Test Restaurant',
+    latitude: 52.2287107,
+    longitude: 20.8973621,
+    name: 'A Chau Restaurant',
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MapComponent],
+      imports: [MapContainerComponent],
       providers: [provideZonelessChangeDetection(), { provide: PLATFORM_ID, useValue: 'browser' }],
-    }).compileComponents();
+    })
+      .overrideComponent(MapContainerComponent, {
+        remove: {
+          imports: [MapComponent, MarkerComponent, PopupComponent],
+        },
+        add: {
+          imports: [MockMapComponent, MockMarkerComponent, MockPopupComponent],
+        },
+      })
+      .compileComponents();
 
-    fixture = TestBed.createComponent(MapComponent);
+    fixture = TestBed.createComponent(MapContainerComponent);
     component = fixture.componentInstance;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    spyOn(component as any, 'loadLeaflet').and.callFake(async () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (component as any).L = mockLeaflet;
-    });
+    // Set required input - use the mockLocation directly, not wrapped in signal()
+    fixture.componentRef.setInput('location', mockLocation);
   });
 
-  it('should render map container', () => {
-    fixture.componentRef.setInput('location', mockLocation);
+  it('renders the map with correct center coordinates', () => {
     fixture.detectChanges();
 
-    const mapContainer = fixture.debugElement.query(By.css('#map'));
-    expect(mapContainer).toBeTruthy();
-    expect(mapContainer.nativeElement.style.height).toBe('500px');
+    // Get the mock map component instance
+    const mapElement = fixture.debugElement.query(By.directive(MockMapComponent));
+    expect(mapElement).toBeTruthy();
+
+    const mockMapComponent = mapElement.componentInstance as MockMapComponent;
+
+    // Check that the center is set correctly on the mock map component
+    const center = mockMapComponent.center as [number, number];
+    expect(center).toBeDefined();
+    expect(center[0]).toBe(mockLocation.longitude);
+    expect(center[1]).toBe(mockLocation.latitude);
   });
 
-  it('should have location input signal', () => {
-    fixture.componentRef.setInput('location', mockLocation);
-    expect(component.location()).toEqual(mockLocation);
+  it('renders the marker at the correct location', () => {
+    fixture.detectChanges();
+
+    const markerElement = fixture.debugElement.query(By.directive(MockMarkerComponent));
+    expect(markerElement).toBeTruthy();
+
+    const mockMarkerComponent = markerElement.componentInstance as MockMarkerComponent;
+
+    // Check that the marker is positioned correctly
+    const lngLat = mockMarkerComponent.lngLat as [number, number];
+    expect(lngLat).toEqual([mockLocation.longitude, mockLocation.latitude]);
   });
 
-  it('should handle server platform', async () => {
-    TestBed.resetTestingModule();
-    await TestBed.configureTestingModule({
-      imports: [MapComponent],
-      providers: [provideZonelessChangeDetection(), { provide: PLATFORM_ID, useValue: 'server' }],
-    }).compileComponents();
+  it('renders the popup with correct title and link', () => {
+    fixture.detectChanges();
 
-    const serverFixture = TestBed.createComponent(MapComponent);
-    const serverComponent = serverFixture.componentInstance;
+    const popupElement = fixture.debugElement.query(By.directive(MockPopupComponent));
+    expect(popupElement).toBeTruthy();
+    expect(popupElement.nativeElement.textContent).toContain(mockLocation.name);
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    spyOn(serverComponent as any, 'loadLeaflet');
-    serverComponent.ngAfterViewInit();
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    expect((serverComponent as any).loadLeaflet).not.toHaveBeenCalled();
+    const linkElement = popupElement.nativeElement.querySelector('a');
+    expect(linkElement).toBeTruthy();
+    expect(linkElement.href).toContain(`www.google.com/maps`);
+    expect(linkElement.href).toContain(`${mockLocation.latitude},${mockLocation.longitude}`);
   });
 
-  it('should call loadLeaflet on browser platform', () => {
-    component.ngAfterViewInit();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    expect((component as any).loadLeaflet).toHaveBeenCalled();
+  it('configures the map with OSM style', () => {
+    fixture.detectChanges();
+
+    const mapElement = fixture.debugElement.query(By.directive(MockMapComponent));
+    const mockMapComponent = mapElement.componentInstance as MockMapComponent;
+
+    const style = mockMapComponent.getStyle() as StyleSpecification;
+    expect(style).toBe(component.mapStyle);
+    expect(style.sources['osm']).toBeDefined();
   });
 
-  it('should handle initMap when document is available', () => {
-    fixture.componentRef.setInput('location', mockLocation);
+  it('enables cooperative gestures', () => {
+    fixture.detectChanges();
 
-    const mockMap: MockLeafletMap = {
-      setView: jasmine.createSpy('setView').and.returnValue({}),
-    };
+    const mapElement = fixture.debugElement.query(By.directive(MockMapComponent));
+    const mockMapComponent = mapElement.componentInstance as MockMapComponent;
 
-    const mockTileLayer: MockLeafletTileLayer = {
-      addTo: jasmine.createSpy('addTo').and.returnValue({}),
-    };
-
-    const mockMarker: MockLeafletMarker = {
-      addTo: jasmine.createSpy('addTo').and.returnValue({
-        bindPopup: jasmine.createSpy('bindPopup').and.returnValue({
-          openPopup: jasmine.createSpy('openPopup'),
-        }),
-      }),
-    };
-
-    const mockLeafletLocal: MockLeaflet = {
-      map: jasmine.createSpy('map').and.returnValue(mockMap),
-      tileLayer: jasmine.createSpy('tileLayer').and.returnValue(mockTileLayer),
-      marker: jasmine.createSpy('marker').and.returnValue(mockMarker),
-      icon: jasmine.createSpy('icon').and.returnValue({}),
-      Marker: { prototype: { options: {} } },
-    };
-
-    // Set this.L on the component
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (component as any).L = mockLeafletLocal;
-
-    // Mock DOM element
-    const mockElement = document.createElement('div');
-    mockElement.id = 'map';
-    spyOn(document, 'getElementById').and.returnValue(mockElement);
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (component as any).initMap();
-
-    expect(mockLeafletLocal.map).toHaveBeenCalledWith('map');
-    expect(mockLeafletLocal.tileLayer).toHaveBeenCalledWith(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      jasmine.any(Object)
-    );
-    expect(mockLeafletLocal.marker).toHaveBeenCalledWith([
-      mockLocation.latitude,
-      mockLocation.longitude,
-    ]);
+    expect(mockMapComponent.getCooperativeGestures()).toBe(true);
   });
 
-  it('should not initialize map when document is not available', () => {
-    const mockLeafletLocal = {
-      map: jasmine.createSpy('map'),
-      icon: jasmine.createSpy('icon'),
-    };
+  it('replaces default cooperative gestures messages with Polish translations', async () => {
+    // Mock document.querySelector to simulate finding the message divs
+    const mockDesktopDiv = { textContent: 'Use Ctrl + scroll to zoom the map' };
+    const mockMobileDiv = { textContent: 'Use two fingers to move the map' };
 
-    // Set L but mock the early return condition
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (component as any).L = mockLeafletLocal;
-
-    // Spy on initMap to simulate the document check
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    spyOn(component as any, 'initMap').and.callFake(() => {
-      // Simulate the early return when document is undefined
-      return; // Early return without calling any Leaflet methods
+    spyOn(document, 'querySelector').and.callFake((selector: string) => {
+      if (selector === '.maplibregl-desktop-message') return mockDesktopDiv as Element;
+      if (selector === '.maplibregl-mobile-message') return mockMobileDiv as Element;
+      return null;
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (component as any).initMap();
+    // Mock navigator.userAgent for non-Mac detection
+    Object.defineProperty(window.navigator, 'userAgent', {
+      value: 'Windows NT 10.0; Win64; x64',
+      configurable: true,
+    });
 
-    expect(mockLeafletLocal.map).not.toHaveBeenCalled();
+    const mapElement = fixture.debugElement.query(By.directive(MockMapComponent));
+    const mockMapComponent = mapElement.componentInstance as MockMapComponent;
+
+    // Trigger the mapLoad event
+    mockMapComponent.mapLoad.emit();
+    fixture.detectChanges();
+
+    // Wait for the setTimeout(0) in onMapLoad to complete
+    await new Promise(resolve => setTimeout(resolve, 10));
+
+    // Check that Polish messages were set
+    expect(mockDesktopDiv.textContent).toBe(component['polishLocale'].cooperativeGesturesWindows);
+    expect(mockMobileDiv.textContent).toBe(component['polishLocale'].cooperativeGesturesMobile);
+  });
+
+  it('detects macOS and shows Command key message', async () => {
+    // Mock document.querySelector to simulate finding the message divs
+    const mockDesktopDiv = { textContent: 'Use Ctrl + scroll to zoom the map' };
+    const mockMobileDiv = { textContent: 'Use two fingers to move the map' };
+
+    spyOn(document, 'querySelector').and.callFake((selector: string) => {
+      if (selector === '.maplibregl-desktop-message') return mockDesktopDiv as Element;
+      if (selector === '.maplibregl-mobile-message') return mockMobileDiv as Element;
+      return null;
+    });
+
+    // Mock navigator.userAgent for macOS detection
+    Object.defineProperty(window.navigator, 'userAgent', {
+      value: 'Macintosh; Intel Mac OS X 10_15_7',
+      configurable: true,
+    });
+
+    const mapElement = fixture.debugElement.query(By.directive(MockMapComponent));
+    const mockMapComponent = mapElement.componentInstance as MockMapComponent;
+
+    // Trigger the mapLoad event
+    mockMapComponent.mapLoad.emit();
+    fixture.detectChanges();
+
+    // Wait for the setTimeout(0) in onMapLoad to complete
+    await new Promise(resolve => setTimeout(resolve, 10));
+
+    // Check that Polish messages were set
+    expect(mockDesktopDiv.textContent).toBe(component['polishLocale'].cooperativeGesturesMac);
+    expect(mockMobileDiv.textContent).toBe(component['polishLocale'].cooperativeGesturesMobile);
+  });
+
+  it('does not manipulate DOM on server side', () => {
+    // Create a new component with server platform
+    TestBed.resetTestingModule();
+    TestBed.configureTestingModule({
+      imports: [MapContainerComponent],
+      providers: [provideZonelessChangeDetection(), { provide: PLATFORM_ID, useValue: 'server' }],
+      schemas: [NO_ERRORS_SCHEMA],
+    });
+
+    const serverFixture = TestBed.createComponent(MapContainerComponent);
+    const serverComponent = serverFixture.componentInstance;
+    serverFixture.componentRef.setInput('location', mockLocation);
+
+    const querySelectorSpy = spyOn(document, 'querySelector');
+
+    serverComponent.onMapLoad();
+
+    // querySelector should not be called on server
+    expect(querySelectorSpy).not.toHaveBeenCalled();
   });
 });

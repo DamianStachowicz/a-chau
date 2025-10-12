@@ -3,11 +3,11 @@ import { ContactService } from '../../services/contact.service';
 import { Contact } from './contact.interface';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { MapComponent } from '../map/map.component';
+import { MapContainerComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [AsyncPipe, MapComponent],
+  imports: [AsyncPipe, MapContainerComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

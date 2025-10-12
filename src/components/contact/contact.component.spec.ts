@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactComponent } from './contact.component';
 import { ContactService } from '../../services/contact.service';
-import { MapComponent } from '../map/map.component';
+import { MapContainerComponent } from '../map/map.component';
 import { provideZonelessChangeDetection, Component, Input } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
@@ -72,7 +72,7 @@ describe('ContactComponent', () => {
       ],
     })
       .overrideComponent(ContactComponent, {
-        remove: { imports: [MapComponent] },
+        remove: { imports: [MapContainerComponent] },
         add: { imports: [MockMapComponent] },
       })
       .compileComponents();

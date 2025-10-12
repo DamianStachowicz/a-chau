@@ -1,1 +1,25 @@
-<div id="map" style="height: 500px"></div>
+<div class="map">
+  <mgl-map
+    [style]="mapStyle"
+    [zoom]="[16]"
+    [center]="[location().longitude, location().latitude]"
+    [cooperativeGestures]="true"
+    (mapLoad)="onMapLoad()"
+  >
+    <mgl-marker #marker [lngLat]="[location().longitude, location().latitude]"> </mgl-marker>
+    <mgl-popup
+      class="map__popup popup"
+      [marker]="marker"
+      [focusAfterOpen]="false"
+      [closeButton]="false"
+    >
+      <h4 class="popup__heading">🇻🇳📍 {{ location().name }}</h4>
+      <a
+        class="popup__link"
+        href="https://www.google.com/maps/dir//A+chau,+Karabeli+2D,+01-313+Warszawa/@52.2287107,20.8973621,754m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x471ecb275fc7c399:0x76816cc62925611b!2m2!1d20.9022287!2d52.2286861!3e0?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        >🚙 Wskazówki dojazdu</a
+      >
+    </mgl-popup>
+  </mgl-map>
+</div>

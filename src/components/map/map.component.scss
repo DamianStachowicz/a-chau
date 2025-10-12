@@ -1,0 +1,35 @@
+.map {
+  & {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  mgl-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__marker {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.popup {
+  &__heading {
+    color: #4a3a25;
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 18px;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  &__link {
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
