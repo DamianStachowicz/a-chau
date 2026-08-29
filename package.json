@@ -17,27 +17,24 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/compiler": "^20.1.0",
-    "@angular/core": "^20.1.0",
-    "@angular/forms": "^20.1.0",
-    "@angular/platform-browser": "^20.1.0",
-    "@angular/platform-server": "^20.1.0",
-    "@angular/router": "^20.1.0",
-    "@angular/ssr": "^20.1.5",
-    "@maplibre/ngx-maplibre-gl": "^20.0.0",
+    "@angular/common": "^22.1.4",
+    "@angular/compiler": "^22.1.4",
+    "@angular/core": "^22.1.4",
+    "@angular/platform-browser": "^22.1.4",
+    "@angular/platform-server": "^22.1.4",
+    "@angular/router": "^22.1.4",
+    "@angular/ssr": "^22.1.4",
     "express": "^5.1.0",
-    "maplibre-gl": "^5.8.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-eslint/eslint-plugin": "^20.3.0",
-    "@angular-eslint/eslint-plugin-template": "^20.3.0",
-    "@angular-eslint/template-parser": "^20.3.0",
-    "@angular/build": "^20.3.2",
-    "@angular/cli": "^20.3.2",
-    "@angular/compiler-cli": "^20.3.1",
+    "@angular-eslint/eslint-plugin": "^22.1.0",
+    "@angular-eslint/eslint-plugin-template": "^22.1.0",
+    "@angular-eslint/template-parser": "^22.1.0",
+    "@angular/build": "^22.1.6",
+    "@angular/cli": "^22.1.6",
+    "@angular/compiler-cli": "^22.1.4",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
@@ -59,6 +56,6 @@
     "prettier": "^3.6.2",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "pretty-quick": "^4.2.2",
-    "typescript": "~5.8.2"
+    "typescript": "~6.0.3"
   }
 }
