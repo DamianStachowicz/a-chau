@@ -1,0 +1,175 @@
+@use "variables";
+
+.footer {
+  background-color: var(--foreground);
+  border: 1px solid #2e2018;
+  color: #cfc3a8;
+  display: grid;
+  font-size: 0.9rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding: 3rem 1.25rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &__copyright {
+    border-top: 1px solid #2e2018;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+}
+
+.brand {
+  &__home-link {
+    color: #cfc3a8;
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+  }
+
+  &__description {
+    color: #9e8e78;
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.social-links {
+  &__link {
+    color: #cfc3a8;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__img {
+    color: #cfc3a8;
+    height: 1rem;
+    width: 1rem;
+
+    &--facebook {
+      background-color: currentColor;
+      display: inline-block;
+      mask-image: url("/images/facebook.svg");
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      -webkit-mask-image: url("/images/facebook.svg");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+    }
+
+    &--google-maps {
+      background-color: currentColor;
+      display: inline-block;
+      mask-image: url("/images/google-maps.svg");
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      -webkit-mask-image: url("/images/google-maps.svg");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+    }
+  }
+}
+
+.opening-hours {
+  &__title {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    color: #9e8e78;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+  }
+
+  &__entry {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  &__time {
+    color: #cfc3a8;
+  }
+}
+
+.contact {
+  &__title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__address {
+    color: #9e8e78;
+    font-size: 0.9rem;
+
+    & > * + * {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__phone {
+    color: #cfc3a8;
+    display: block;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.page-map {
+  margin-top: 0.25rem;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+      color: #9e8e78;
+      font-size: 0.75rem;
+      transition: opacity 0.15s ease-in-out;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

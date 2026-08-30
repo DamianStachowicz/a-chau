@@ -1,0 +1,72 @@
+<footer class="footer">
+  <div class="footer__brand brand">
+    <a class="brand__home-link" [routerLink]="'/'">Á Châu</a>
+    <p class="brand__description">
+      Restauracja wietnamska na Bemowie. Gotujemy z pasją od ponad 30 lat.
+    </p>
+    <div class="brand__social-links social-links">
+      <a
+        class="social-links__link"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.facebook.com/profile.php?id=100053004776093"
+      >
+        <span
+          class="social-links__img social-links__img--facebook"
+          role="img"
+          aria-label="Facebook"
+        ></span>
+        Facebook
+      </a>
+      <a
+        class="social-links__link"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://maps.app.goo.gl/pcZG2Qk2roTJ5FCz5"
+      >
+        <span
+          class="social-links__img social-links__img--google-maps"
+          role="img"
+          aria-label="Google Maps"
+        ></span>
+        Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__opening-hours opening-hours">
+    <h4 class="opening-hours__title">Godziny otwarcia</h4>
+    <div class="opening-hours__content">
+      <div class="opening-hours__entry">
+        <span class="opening-hours__days">Poniedziałek – Piątek</span>
+        <span class="opening-hours__time">11:00 – 20:00</span>
+      </div>
+      <div class="opening-hours__entry">
+        <span class="opening-hours__days">Sobota – Niedziela</span>
+        <span class="opening-hours__time">11:00 – 19:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__contact contact">
+    <h4 class="contact__title">Kontakt</h4>
+    <div class="contact__address">
+      <p>ul. Karabeli 2D</p>
+      <p>01-313 Warszawa, Bemowo</p>
+      <a class="contact__phone" href="tel:+48226652526"> +48 22 665 25 26 </a>
+    </div>
+  </div>
+
+  <nav class="footer__page-map page-map">
+    <ul class="page-map__list">
+      <li><a href="/">Strona główna</a></li>
+      <li><a href="/menu">Menu</a></li>
+      <li><a href="/about">O nas</a></li>
+      <li><a href="/contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <div class="footer__copyright">
+    &copy; {{ currentYear }} Á Châu Restauracja Wietnamska · Warszawa, Bemowo
+  </div>
+</footer>

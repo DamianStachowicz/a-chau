@@ -20,6 +20,9 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "assets": [
               {
                 "glob": "**/*",
@@ -79,6 +82,9 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "codeCoverage": true,
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "assets": [
               {
                 "glob": "**/*",
