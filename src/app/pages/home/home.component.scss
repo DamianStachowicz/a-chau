@@ -14,7 +14,7 @@
     color: var(--accent);
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.25em;
     margin-bottom: 1.5rem;
     font-weight: 500;
   }
@@ -61,7 +61,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.15em;
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -88,7 +88,7 @@
     color: #6b5c4a;
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1em;
   }
 
   &__arrow {
