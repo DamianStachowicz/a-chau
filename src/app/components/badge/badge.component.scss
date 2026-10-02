@@ -1,0 +1,20 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  &--spicy {
+    background-color: #ffe0d0;
+    color: #b03010;
+    border: 1px solid #e8a888;
+  }
+
+  &--vege {
+    background-color: #edf7ed;
+    color: #2e6e2e;
+    border: 1px solid #b8ddb8;
+  }
+}

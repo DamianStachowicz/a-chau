@@ -1,0 +1,15 @@
+<span
+  class="badge"
+  [class.badge--spicy]="type() === 'spicy'"
+  [class.badge--vege]="type() === 'vege'"
+  [title]="type() === 'spicy' ? 'Danie ostre' : 'Danie wegetariańskie'"
+>
+  @if (type() === 'spicy') {
+    🌶️
+  } @else {
+    🌿
+  }
+  @if (!iconOnly()) {
+    {{ type() === 'spicy' ? 'Ostre' : 'Wege' }}
+  }
+</span>

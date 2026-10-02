@@ -1,0 +1,52 @@
+<section class="header">
+  <div class="header__content">
+    <p class="header__name">Á Châu</p>
+    <div class="header__title">Menu</div>
+    <div class="header__note note">
+      <span class="note__icon" role="img" aria-label="Info"></span>
+      Wszystkie dania serwowane z ryżem i sałatką
+    </div>
+  </div>
+</section>
+
+<section class="legend">
+  <div class="legend__content">
+    <span class="legend__title"> Oznaczenia: </span>
+    <app-badge [iconOnly]="false" type="vege"></app-badge>
+    <app-badge [iconOnly]="false" type="spicy"></app-badge>
+  </div>
+</section>
+
+<div class="content">
+  <div class="content__menu menu">
+    @if (menu(); as menu) {
+      @for (section of menu.sections; track section.id) {
+        <section class="menu__section" [id]="section.id">
+          <div class="menu__section-header">
+            <h2 class="menu__section-name">
+              {{ section.name }}
+            </h2>
+            @if (!!section.description) {
+              <span class="menu__section-description">{{ section.description }}</span>
+            }
+          </div>
+
+          @for (subsection of section.subsections; track subsection.id) {
+            <div class="menu__subsection" [id]="subsection.id">
+              <h3 class="menu__subsection-name">{{ subsection.name }}</h3>
+              @if (!!subsection.description) {
+                <p class="menu__subsection-description">{{ subsection.description }}</p>
+              }
+            </div>
+
+            @if (!!subsection.items) {
+              <div class="menu__items">
+                @for (item of subsection.items; track item.id) {}
+              </div>
+            }
+          }
+        </section>
+      }
+    }
+  </div>
+</div>

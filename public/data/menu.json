@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "przystawki",
-      "name": "PRZYSTAWKI",
+      "name": "Przystawki",
       "subsections": [
         {
           "id": "przystawki-main",
@@ -56,7 +56,7 @@
     },
     {
       "id": "dania-wegetarianskie",
-      "name": "DANIA WEGETARIAŃSKIE",
+      "name": "Dania wegetariańskie",
       "subsections": [
         {
           "id": "dania-wegetarianskie-main",
@@ -85,7 +85,7 @@
     },
     {
       "id": "zupy",
-      "name": "ZUPY",
+      "name": "Zupy",
       "subsections": [
         {
           "id": "zupy-main",
@@ -107,7 +107,7 @@
             },
             {
               "id": "pho",
-              "name": "PHỞ",
+              "name": "Phở",
               "price": 17,
               "variants": [
                 {
@@ -168,13 +168,13 @@
                   "id": "tom-kha",
                   "name": "Tom Kha (kurczak)",
                   "price": 18,
-                  "spicyness": 2
+                  "spicyness": true
                 },
                 {
                   "id": "tom-yum",
                   "name": "Tom Yum (krewetki)",
                   "price": 25,
-                  "spicyness": 2
+                  "spicyness": true
                 }
               ]
             },
@@ -189,7 +189,7 @@
     },
     {
       "id": "inne",
-      "name": "INNE",
+      "name": "Inne",
       "subsections": [
         {
           "id": "inne-main",
@@ -226,11 +226,11 @@
     },
     {
       "id": "drob",
-      "name": "DRÓB",
+      "name": "Drób",
       "subsections": [
         {
           "id": "kurczak",
-          "name": "KURCZAK",
+          "name": "Kurczak",
           "description": "250g",
           "items": [
             {
@@ -303,7 +303,7 @@
         },
         {
           "id": "indyk",
-          "name": "INDYK",
+          "name": "Indyk",
           "items": [
             {
               "id": "w-sosie-indyk",
@@ -356,7 +356,7 @@
         },
         {
           "id": "kaczka",
-          "name": "KACZKA",
+          "name": "Kaczka",
           "items": [
             {
               "id": "w-sosie-kaczka",
@@ -401,7 +401,7 @@
     },
     {
       "id": "makarony",
-      "name": "MAKARONY",
+      "name": "Makarony",
       "subsections": [
         {
           "id": "standard",
@@ -488,7 +488,7 @@
     },
     {
       "id": "wieprzowina",
-      "name": "WIEPRZOWINA",
+      "name": "Wieprzowina",
       "description": "250-300g",
       "subsections": [
         {
@@ -609,7 +609,7 @@
     },
     {
       "id": "wolowina",
-      "name": "WOŁOWINA",
+      "name": "Wołowina",
       "description": "250g",
       "subsections": [
         {
@@ -677,7 +677,7 @@
     },
     {
       "id": "cielecina",
-      "name": "CIELĘCINA",
+      "name": "Cielęcina",
       "description": "250g",
       "subsections": [
         {
@@ -744,12 +744,12 @@
     },
     {
       "id": "ryby",
-      "name": "RYBY",
+      "name": "Ryby",
       "description": "250-300g",
       "subsections": [
         {
           "id": "dorsz",
-          "name": "DORSZ",
+          "name": "Dorsz",
           "items": [
             {
               "id": "w-sosie-dorsz",
@@ -784,7 +784,7 @@
         },
         {
           "id": "sandacz",
-          "name": "SANDACZ",
+          "name": "Sandacz",
           "items": [
             {
               "id": "w-sosie-sandacz",
@@ -819,7 +819,7 @@
         },
         {
           "id": "losos",
-          "name": "ŁOSOŚ",
+          "name": "Łosoś",
           "items": [
             {
               "id": "w-sosie-losos",
@@ -845,7 +845,7 @@
         },
         {
           "id": "halibut",
-          "name": "HALIBUT",
+          "name": "Halibut",
           "items": [
             {
               "id": "chrupiacy",
@@ -868,7 +868,7 @@
     },
     {
       "id": "owoce-morza",
-      "name": "OWOCE MORZA",
+      "name": "Owoce morza",
       "description": "250-350g",
       "subsections": [
         {
@@ -899,7 +899,7 @@
         },
         {
           "id": "krewetki",
-          "name": "KREWETKI",
+          "name": "Krewetki",
           "items": [
             {
               "id": "z-rozmaistosciami",
@@ -937,7 +937,7 @@
         },
         {
           "id": "zabie-udka",
-          "name": "ŻABIE UDKA",
+          "name": "Żabie udka",
           "items": [
             {
               "id": "w-ciescie-zabie",
@@ -960,7 +960,7 @@
     },
     {
       "id": "dodatki",
-      "name": "DODATKI",
+      "name": "Dodatki",
       "subsections": [
         {
           "id": "dodatki-main",
